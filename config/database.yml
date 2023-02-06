@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: binterest_production
-  username: binterest
-  password: <%= ENV["BINTEREST_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

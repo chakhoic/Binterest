@@ -23,7 +23,7 @@ export const loginUser = user => async dispatch => {
     });
     let data = await res.json();
     sessionStorage.setItem('currentUser', JSON.stringify(data.user));
-    debugger
+    // debugger
     dispatch(receiveUser(data.user))
 };
 
@@ -51,7 +51,7 @@ const usersReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_USER:
-            debugger
+            // debugger
             nextState[action.payload.id] = action.payload;
             return nextState;
         case REMOVE_USER:
