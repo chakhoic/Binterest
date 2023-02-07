@@ -1,7 +1,33 @@
 .input {
-    border-radius: 45%;
+    border-radius: 5%;
+    outline-color: lightgrey;
+    font-family: sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url("../../images/login.jpeg");
+    background-size: cover;
 }
 
 form {
-    background-color: grey;
+    background-color: white;
+}
+
+#logo {
+    display: block;
+    text-align: center;
+    margin-left: 34.5%;
+}
+
+#box {
+    height: fit-content;
+    border-radius: 5%;
+    width: fit-content;
+    padding: 5%;
+    margin: auto;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 5px 10px #888888;
 }
