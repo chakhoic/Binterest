@@ -9,7 +9,7 @@ import logo from "../../images/b.png";
 function LoginFormPage() {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
-    const [credential, setCredential] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
 
@@ -18,7 +18,7 @@ function LoginFormPage() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
-        return dispatch(sessionActions.login({ credential, password }))
+        return dispatch(sessionActions.login({ email, password }))
             .catch(async (res) => {
                 let data;
                 try {
@@ -33,28 +33,34 @@ function LoginFormPage() {
             });
     }
 
+    const demoLogin = (e) => {
+        e.preventDefault()
+        dispatch(sessionActions.login({ email: 'demo@user.io', password: 'password'}))
+    }
+
     return (
         <div id="loginback">
         <div id="box">
             <img id="logo" src={logo} alt="logo" width="100" height="100" />
             <h1>Welcome to 🅱interest</h1>
+            <h2>Log in to see more</h2>
         <form onSubmit={handleSubmit}>
             <ul>
                 {errors.map(error => <li key={error}>{error}</li>)}
             </ul>
-            <label id= "email">
+            <label id= "textz">
                 Email: 
                 <br></br>
                 <input
                 className='input'
                     type="text"
-                    value={credential}
-                    onChange={(e) => setCredential(e.target.value)}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                 />
             </label>
             <br></br>
-            <label>
+            <label id= "textz">
                 Password: 
                 <br></br>
                 <input
@@ -70,10 +76,10 @@ function LoginFormPage() {
                 Forgot your password?
             </label>
             <br></br>
-            <button id="button" type="submit">Log In</button>
+            <button id="loginbutton" type="submit">Log In</button>
             <br></br>
             <p>OR</p>
-            <button id ="button" type="submit">Demo User</button>
+            <button id ="demobutton" onClick={ demoLogin }>Demo User</button>
         </form>
         </div>
         </div>

@@ -1,0 +1,74 @@
+#home {
+    width: 160px;
+    height: 35px;
+}
+
+#login {
+    float: right;
+    margin-right: 10px;
+    min-width: 60px;
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: rgba(255, 0, 0, 0.805);
+    color: white;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    border-radius: 24px;
+    font-size: 100%;
+    font-family: sans-serif;
+    vertical-align: middle;
+    margin: 0px;
+    cursor: pointer;
+    line-height: normal;
+    border: none;
+}
+
+#logout {
+    float: right;
+        margin-right: 30px;
+        min-width: 60px;
+        box-sizing: border-box;
+        display: inline-block;
+        background-color: rgba(255, 0, 0, 0.805);
+        color: white;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+        border-radius: 24px;
+        font-size: 100%;
+        font-family: sans-serif;
+        vertical-align: middle;
+        margin: 0px;
+        cursor: pointer;
+        line-height: normal;
+        border: none;
+}
+
+#signup {
+    float: right;
+    margin-right: 50px;
+    min-width: 60px;
+        box-sizing: border-box;
+        display: inline-block;
+        background-color: rgba(128, 128, 128, 0.381);
+        color: black;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+        border-radius: 24px;
+        font-size: 100%;
+        font-family: sans-serif;
+        vertical-align: middle;
+        margin: 0px;
+        cursor: pointer;
+        border: none;
+        overflow: visible;
+}
+
+#something {
+    display: flex;
+}
