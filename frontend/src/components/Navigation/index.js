@@ -3,6 +3,7 @@ import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './navigation.css';
 import home from "../../images/home.png";
+import logo from "../../images/b.png"
 import * as sessionActions from '../../store/session'
 
 
@@ -46,18 +47,43 @@ function Navigation() {
     const buttonsignup = sessionUser ? null : <button id="signup" onClick={signupButton}>Sign Up</button>
     const buttonlogin = sessionUser ? null : <button id="login" onClick={loginButton}>Log In</button>
 
+
+    if (!sessionUser) {
     return (
         <>
             <NavLink exact to="/"><img id="home" src={home} alt="home" /></NavLink>
-            {/* <button id ="logout" onClick={handleLogout}>Log Out </button> 
-            <button id ="signup" onClick={signupButton}>Sign Up</button>
-            <button id ="login" onClick={loginButton}>Log In</button> */}
             {buttonsignup}
             {buttonlogin}
-            {buttonlogout}
         </>
     );
-}
+} else {
+        return (
+            <>
+            <div id="bar">
+                <div>
+                <NavLink exact to="/"><img id="home" src={home} alt="home" /></NavLink>
+                </div>
+                <div id="dropdown">
+                    <select>
+                        <option value="create">Create</option>
+                        <option value="ideapin">Create Idea Pin</option>
+                        <option value="pin">Creat Pin</option>
+                    </select>
+                </div>
+                <div id="search">
+                <label >
+                    <input type="text" placeholder="Search.." name="search"></input>
+                </label>
+                </div>
+                <div>
+                {buttonlogout}
+                </div>
+                </div>
+            </>
+            )
+        }
+    }
+
 
 
 export default Navigation;

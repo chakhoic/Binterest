@@ -4,6 +4,8 @@ import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import "./signupForm.css";
 import logo from "../../images/b.png";
+import { NavLink } from 'react-router-dom';
+
 
 
 function SignupFormPage() {
@@ -39,10 +41,13 @@ function SignupFormPage() {
     };
 
     return (
+        <div id="signupback">
         <div id="box2">
             <img id="logo" src={logo} alt="logo" width="100" height="100" />
             <h1>Welcome to 🅱interest</h1>
+            <br></br>
             <h2>Find out</h2>
+            <br></br>
         <form onSubmit={handleSubmit}>
             <ul>
                 {errors.map(error => <li key={error}>{error}</li>)}
@@ -84,7 +89,13 @@ function SignupFormPage() {
             </label>
             <br></br>
             <button id="continue" type="submit">Continue</button>
+            <br></br>
+            <br></br>
+            <p>By continuing, you agree to 🅱interest's Terms of Service</p>
+            <hr></hr>
+            <NavLink id="already" exact to="/login"> Already a member? Log in </NavLink>
         </form>
+        </div>
         </div>
     );
 }

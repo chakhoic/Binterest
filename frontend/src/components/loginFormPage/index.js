@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import "./loginForm.css";
 import logo from "../../images/b.png";
+import { NavLink } from 'react-router-dom';
+
 
 
 function LoginFormPage() {
@@ -43,7 +45,10 @@ function LoginFormPage() {
         <div id="box">
             <img id="logo" src={logo} alt="logo" width="100" height="100" />
             <h1>Welcome to 🅱interest</h1>
+            <br></br>
             <h2>Log in to see more</h2>
+            <br></br>
+
         <form onSubmit={handleSubmit}>
             <ul>
                 {errors.map(error => <li key={error}>{error}</li>)}
@@ -78,8 +83,16 @@ function LoginFormPage() {
             <br></br>
             <button id="loginbutton" type="submit">Log In</button>
             <br></br>
-            <p>OR</p>
+            <br></br>
+            <p id="or">OR</p>
+            <br></br>
             <button id ="demobutton" onClick={ demoLogin }>Demo User</button>
+            <br></br>
+             <br></br>
+
+            <p>By continuing, you agree to 🅱interest's Terms of Service</p>
+                    <hr></hr>
+            <NavLink id="notyet" exact to="/signup"> Not on Pinterest yet? Sign up </NavLink>
         </form>
         </div>
         </div>
