@@ -63,8 +63,8 @@ function Navigation() {
                 <div>
                 <NavLink exact to="/"><img id="home" src={home} alt="home" /></NavLink>
                 </div>
-                <div id="dropdown">
-                    <select>
+                <div >
+                        <select id="dropdown">
                         <option value="create">Create</option>
                         <option value="ideapin">Create Idea Pin</option>
                         <option value="pin">Creat Pin</option>

@@ -44,7 +44,7 @@ function LoginFormPage() {
         <div id="loginback">
         <div id="box">
             <img id="logo" src={logo} alt="logo" width="100" height="100" />
-            <h1>Welcome to 🅱interest</h1>
+                <h1>Welcome to 🅱interest™</h1>
             <br></br>
             <h2>Log in to see more</h2>
             <br></br>

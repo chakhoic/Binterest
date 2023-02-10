@@ -12,6 +12,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 
 }
 
@@ -97,29 +98,34 @@
 body {
     padding-top: 10px;
     flex-direction: row;
+    display: flexbox;
 }
 
+/* .select */
+
+
 #dropdown {
-        margin-left: 50px;
+        margin-left: 300px;
         top:1.5vh;
-        position: absolute;
-        margin-bottom: 50px;
-        min-width: 60px;
-        box-sizing: border-box;
-        display: inline-block;
+        /* position: absolute; */
+        /* margin-bottom: 50px; */
+        /* min-width: 60px; */
+        /* box-sizing: border-box; */
+        /* display: inline-block; */
         background-color: transparent;
         color: black;
-        padding-left: 0px;
-        padding-right: 0px;
+        /* padding-left: 2px;
+        padding-right: px; */
         padding-bottom: 10px;
         padding-top: 10px;
         border-radius: 25px;
         font-size: 100%;
         font-family: sans-serif;
-        margin: 0px;
+        margin: auto;
         cursor: pointer;
         border: lightgrey;
-        overflow: visible;
+        border-style: groove;
+        /* overflow: visible; */
         text-align: center;
 }
 
@@ -129,6 +135,6 @@ body {
 
 
 #search {
-   width: 100px;
-   align-items: center;
+   /* width: 100px; */
+   /* align-items: center; */
 }
