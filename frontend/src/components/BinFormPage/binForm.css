@@ -1,0 +1,21 @@
+#binback {
+    width: 100%;
+    background-image: url("../../images/marble.jpeg");
+    background-size: 100% 100%;
+    /* background-color: red; */
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    /* padding-bottom: 500px; */
+}
+
+#box3 {
+    border: 10px;
+    height: fit-content;
+    border-radius: 10%;
+    width: fit-content;
+    padding: 6%;
+    margin: auto;
+    background-color: white;
+    margin-top: 15px;
+    height: 527px;
+}

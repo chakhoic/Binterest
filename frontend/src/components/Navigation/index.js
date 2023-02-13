@@ -3,7 +3,8 @@ import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './navigation.css';
 import home from "../../images/home.png";
-import logo from "../../images/b.png"
+import profileicon from "../../images/usericon.png"
+// import logo from "../../images/b.png"
 import * as sessionActions from '../../store/session'
 
 
@@ -34,6 +35,13 @@ function Navigation() {
         history.push("/signup")
     }
 
+    const createButton = () => {
+        history.push("/createbin")
+    }
+
+    // const profileButton = () => {
+    //     history.push("/")
+    // }
 
     const dispatch = useDispatch()
 
@@ -46,7 +54,8 @@ function Navigation() {
     const buttonlogout = sessionUser ? <button id="logout" onClick={handleLogout}>Log Out </button> : null
     const buttonsignup = sessionUser ? null : <button id="signup" onClick={signupButton}>Sign Up</button>
     const buttonlogin = sessionUser ? null : <button id="login" onClick={loginButton}>Log In</button>
-
+    const buttoncreate = sessionUser ? <button id="dropdown" onClick={createButton}> Create Bin ⬇ </button> : null
+    // const buttonprofile = sessionUser ? <button id="dropdown" onClick={profileButton}>Profile</button> : null
 
     if (!sessionUser) {
     return (
@@ -62,20 +71,13 @@ function Navigation() {
             <div id="bar">
                 <div>
                 <NavLink exact to="/"><img id="home" src={home} alt="home" /></NavLink>
+                {buttoncreate}
                 </div>
-                <div >
-                        <select id="dropdown">
-                        <option value="create">Create</option>
-                        <option value="ideapin">Create Idea Pin</option>
-                        <option value="pin">Creat Pin</option>
-                    </select>
-                </div>
-                <div id="search">
                 <label >
-                    <input type="text" placeholder="Search.." name="search"></input>
+                        <input id="search" type="search" placeholder="🔍 Search bar is under maintenance..." name="search"></input>
                 </label>
-                </div>
                 <div>
+                <NavLink exact to="/"><img id="profile" src={profileicon} alt="profile" /></NavLink>
                 {buttonlogout}
                 </div>
                 </div>

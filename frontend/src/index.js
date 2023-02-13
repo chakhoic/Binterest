@@ -33,7 +33,6 @@ if (currentUser) {
 };
 
 
-
 window.createUser = createUser
 window.loginUser = loginUser
 window.logoutUser = logoutUser
