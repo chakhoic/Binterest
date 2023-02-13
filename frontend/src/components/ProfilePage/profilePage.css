@@ -1,0 +1,20 @@
+#profileback {
+    width: 100%;
+    background-image: url("../../images/marble.jpeg");
+    background-size: 100% 100%;
+    /* background-color: red; */
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    /* padding-bottom: 500px; */
+}
+
+#plus {
+    width: 30px;
+    height: 15px;
+}
+
+.modal-background {
+    height: 200px;
+    width: 500px;
+    align-items: center;
+}

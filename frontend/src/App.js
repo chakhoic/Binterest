@@ -5,6 +5,8 @@ import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import UploadForm from './components/BinFormPage';
+import ProfilePage from './components/ProfilePage';
+import BoardForm from './components/BoardFormPage';
 
 
 function App() {
@@ -27,6 +29,12 @@ function App() {
     <Switch>
           <Route path='/createbin'>
             <UploadForm />
+          </Route>
+          <Route path='/createboard'>
+            <BoardForm />
+          </Route>
+          <Route path='/profile'>
+            <ProfilePage />
           </Route>
       <Route path="/login">
         <LoginFormPage />

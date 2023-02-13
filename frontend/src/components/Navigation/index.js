@@ -40,7 +40,7 @@ function Navigation() {
     }
 
     // const profileButton = () => {
-    //     history.push("/")
+    //     history.push("/profile")
     // }
 
     const dispatch = useDispatch()
@@ -55,14 +55,16 @@ function Navigation() {
     const buttonsignup = sessionUser ? null : <button id="signup" onClick={signupButton}>Sign Up</button>
     const buttonlogin = sessionUser ? null : <button id="login" onClick={loginButton}>Log In</button>
     const buttoncreate = sessionUser ? <button id="dropdown" onClick={createButton}> Create Bin ⬇ </button> : null
-    // const buttonprofile = sessionUser ? <button id="dropdown" onClick={profileButton}>Profile</button> : null
+    // const buttonprofile = sessionUser ? <button id="profile" onClick={profileButton}>Profile</button> : null
 
     if (!sessionUser) {
     return (
         <>
+        <div id="bar">
             <NavLink exact to="/"><img id="home" src={home} alt="home" /></NavLink>
             {buttonsignup}
             {buttonlogin}
+        </div>
         </>
     );
 } else {
@@ -77,7 +79,7 @@ function Navigation() {
                         <input id="search" type="search" placeholder="🔍 Search bar is under maintenance..." name="search"></input>
                 </label>
                 <div>
-                <NavLink exact to="/"><img id="profile" src={profileicon} alt="profile" /></NavLink>
+                <NavLink exact to="/profile"><img id="profile" src={profileicon} alt="profile" /></NavLink>
                 {buttonlogout}
                 </div>
                 </div>

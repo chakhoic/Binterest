@@ -28,7 +28,9 @@ const CreateBinForm = () => {
     return (
         <>
         <div id="binback">
+                <h1 id="fakeh1">hi</h1>
             <div id="box3">
+
                 <form id="binform" onSubmit={handleSubmit}>
                     <input
                         value={img}
@@ -51,6 +53,7 @@ const CreateBinForm = () => {
                     <input type="submit" value="Create" />
                 </form>
             </div>
+            <h1 id="fakeh12">hi</h1>
         </div>
         </>
     )
