@@ -1,0 +1,24 @@
+#images {
+    border: 2px solid black;
+        border-radius: 10px;
+    border-bottom: 1px solid black;
+    height: 120px;
+        background-color: rgba(245, 245, 245, 0.76);
+        border-color: lightgray;
+}
+
+#board2 {
+
+    width: 220px;
+    height: 120px;
+    margin-right: 50px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+#title2  {
+    font-weight: bold;
+    text-align: left;
+
+
+}

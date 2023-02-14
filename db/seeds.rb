@@ -24,6 +24,30 @@ ApplicationRecord.transaction do
     password: 'password'
   )
 
+  Board.create!(
+    title: 'BOARD1',
+    author_id: 1
+  )
+
+  Board.create!(
+    title: 'BOARD2',
+    author_id: 1
+  )
+
+  Bin.create!(
+    title: 'test1',
+    author_id: 1,
+    board_id: 1,
+    body: 'testing1'
+  )
+
+  Bin.create!(
+    title: 'test2',
+    author_id: 1,
+    board_id: 1,
+    body: 'testing2'
+  )
+
   puts "Done!"
 end
 

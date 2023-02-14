@@ -7,6 +7,14 @@ validates :password, length: { minimum: 6, allow_nil: true }
 
 before_validation :ensure_session_token
 
+has_many :bins,
+   foreign_key: :author_id,
+   class_name: :Bin
+
+has_many :boards,
+   foreign_key: :author_id,
+   class_name: :Board
+
 def ensure_session_token
         self.session_token ||= generate_unique_session_token
 end

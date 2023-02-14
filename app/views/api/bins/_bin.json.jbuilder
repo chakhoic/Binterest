@@ -4,3 +4,5 @@ json.extract! bin,
   :body,
   :photo,
   :author_id
+
+json.photoUrl bin.photo.attached? ? bin.photo.url : nil

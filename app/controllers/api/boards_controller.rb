@@ -1,14 +1,15 @@
-class Api::BinsController < ActionController
+class Api::BoardsController < ApplicationController
     before_action :require_logged_in, only: [:create, :destroy]
 
     
     def index
-        @boards = Bin.all
+        @boards = current_user.boards.where(author_id: @current_user.id)
+        # @boards = Board.all
     end
 
     def create
-        @board = Bin.new(bins_params)
-        @board.user_id = current_user.id
+        @board = Board.new(boards_params)
+        @board.author_id = current_user.id
 
         if @board.save
             render :show
@@ -29,25 +30,25 @@ class Api::BinsController < ActionController
     end
 
     # def update
-    #     @bin = Bin.find_by(id: params[:id])
+    #     @board = Board.find_by(id: params[:id])
 
-    #     @bin.title = params[:bin][:title]
-    #     @bin.description = params[:bin][:description]
+    #     @board.title = params[:board][:title]
+    #     @board.description = params[:board][:description]
 
-    #     if @bin.save
-    #         redirect_to user_url(@bin.user)
+    #     if @board.save
+    #         redirect_to user_url(@board.user)
     #     else
-    #         flash.now[:errors] = @bin.errors.full_messages
+    #         flash.now[:errors] = @board.errors.full_messages
     #         render :edit
     #     end
     # end
 
     # def edit
-    #     @bin = Bin.find(params[:id])
+    #     @board = Board.find(params[:id])
     # end
     private
 
     def boards_params
-    params.require(:board).permit(:title, :photo)
+    params.require(:board).permit(:title)
   end
 end

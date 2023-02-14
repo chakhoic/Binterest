@@ -32,7 +32,7 @@ export const fetchBins = () => async (dispatch) => {
     }
 }
 
-export const fetchBin = binId => async (dispatch) => {
+export const fetchBin = (binId) => async (dispatch) => {
     const res = await fetch(`/api/bins/${binId}`);
 
     if (res.ok) {
@@ -41,8 +41,8 @@ export const fetchBin = binId => async (dispatch) => {
     }
 }
 
-export const createBin = binObj => async (dispatch) => {
-    const res = await fetch(`/api/bins/`, {
+export const createBin = (binObj) => async (dispatch) => {
+    const res = await fetch(`/api/bins`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -59,7 +59,10 @@ export const createBin = binObj => async (dispatch) => {
 export const deleteBin = binId => async dispatch => {
 
     const res = await csrfFetch(`/api/bins/${binId}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
     });
 
     if (res.ok) {

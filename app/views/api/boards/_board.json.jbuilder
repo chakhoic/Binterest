@@ -1,5 +1,4 @@
-json.extract! bin, 
+json.extract! board, 
   :id, 
   :title,
-  :author_id,
-  :bins
+  :author_id

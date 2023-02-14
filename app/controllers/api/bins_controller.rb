@@ -1,20 +1,23 @@
-class Api::BinsController < ActionController
+class Api::BinsController < ApplicationController
+    wrap_parameters include: Post.attribute_names + [:photo]
     before_action :require_logged_in, only: [:create, :destroy]
 
+    def show
+        @bin = Bin.find(params[:id])
+    end
     
+    # aws index
     def index
-        @bins = Bin.all
-        render: index
+        @bins = Bin.all.sort { |a,b| b.created_at <=> a.created_at }
+        render :index
     end
 
     def create
-        @bin = Bin.new(bins_params)
-        @bin.user_id = current_user.id
-
-        if @bin.save
-            render :show
+        post = Post.new(bins_params)
+        if post.save
+            render partial: "api/bins/bin", locals: { bin: bin }
         else
-            render json: { errors: @bin.errors.full_messages }, status: :unprocessable_entity
+            render json: bin.errors.full_messages, status: 422
         end
     end
 

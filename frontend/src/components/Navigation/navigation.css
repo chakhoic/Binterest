@@ -5,17 +5,27 @@
     margin-bottom: -10px;
 }
 
+#bar2 {
+    background-color: white;
+    margin-top: -15px;
+    margin-left: -5px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-width: 0.5px;
+    box-shadow: 5px 10px 18px lightgray;
+}
+
 #bar {
     background-color: white;
     margin-top: -15px;
     margin-left: -5px;
     padding-top: 15px;
-    padding-bottom: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-
 }
 
 #login {
@@ -145,3 +155,8 @@ body {
         font-family: sans-serif;
         font-size: 15px;
 }
+
+/* #notice {
+    height: 55px;
+    width: 55px;
+} */

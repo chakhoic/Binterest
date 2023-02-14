@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './navigation.css';
 import home from "../../images/home.png";
 import profileicon from "../../images/usericon.png"
+import notice from "../../images/notice.png"
 // import logo from "../../images/b.png"
 import * as sessionActions from '../../store/session'
 
@@ -70,7 +71,7 @@ function Navigation() {
 } else {
         return (
             <>
-            <div id="bar">
+            <div id="bar2">
                 <div>
                 <NavLink exact to="/"><img id="home" src={home} alt="home" /></NavLink>
                 {buttoncreate}
