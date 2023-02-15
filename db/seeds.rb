@@ -11,11 +11,15 @@ require "open-uri"
 ApplicationRecord.transaction do 
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
+  Bin.destroy_all
+  Board.destroy_all
   User.destroy_all
 
   puts "Resetting primary keys..."
   # For easy testing, so that after seeding, the first `User` has `id` of 1
   ApplicationRecord.connection.reset_pk_sequence!('users')
+  ApplicationRecord.connection.reset_pk_sequence!('boards')
+  ApplicationRecord.connection.reset_pk_sequence!('bins')
 
   puts "Creating users..."
   # Create one user with an easy to remember username, email, and password:
@@ -23,6 +27,7 @@ ApplicationRecord.transaction do
     email: 'demo@user.io', 
     password: 'password'
   )
+
 
   Board.create!(
     title: 'BOARD1',
@@ -34,20 +39,26 @@ ApplicationRecord.transaction do
     author_id: 1
   )
 
-  Bin.create!(
-    title: 'test1',
-    author_id: 1,
-    board_id: 1,
-    body: 'testing1'
-  )
-
-  Bin.create!(
+  b2 = Bin.create!(
     title: 'test2',
     author_id: 1,
     board_id: 1,
     body: 'testing2'
   )
 
-  puts "Done!"
+
+  b1 = Bin.create!(
+    title: 'test1',
+    author_id: 1,
+    board_id: 1,
+    body: 'testing1'
+  )
+
+  # # Open the file using open-uri
+  # file = URI.open("https://binteresting-prod.s3.us-east-2.amazonaws.com/boney.jpg")
+
+  # # Attach the file to the bin
+  # b1.photo.attach(io: file, filename: "boney.jpg")
+
 end
 

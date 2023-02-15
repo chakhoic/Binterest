@@ -19,11 +19,14 @@ const ProfilePage = (props) => {
     const handleOpenModal = () => setShowModal(true);
     const handleCloseModal = () => setShowModal(false);
     const boards = useSelector(state => Object.values(state.boards))
+    useEffect(() => {
+        dispatch(boardActions.fetchBoards())
+    }, []);
 
     const sessionUser = useSelector(state => state.session.user)
     // useEffect(()=> {dispatch(boardActions.fetchBoards(sessionUser.id))}, [])
 
-    const boardsIndex = boards.map((board) => <BoardItem board={board} />)
+    const boardsIndex = boards.map((board) => <BoardItem setShowModal={setShowModal} board={board} />)
     const [title, setTitle] = useState('')
 
     const handleSubmit = (e) => {
@@ -33,7 +36,7 @@ const ProfilePage = (props) => {
             title: title,
             author_id: sessionUser.id
         }
-        return dispatch(boardActions.createBoard(makeboard, sessionUser.id))
+        return dispatch(boardActions.createBoard(makeboard))
     }
 
     if (!sessionUser) return <Redirect to="/login" />

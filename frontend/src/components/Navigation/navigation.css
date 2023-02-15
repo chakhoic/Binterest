@@ -51,6 +51,11 @@
     border: none;
 }
 
+#login {
+    display: flex;
+    justify-content: center;
+}
+
 #login:hover {
     background-color: lightcoral;
 }
@@ -70,7 +75,7 @@
         border-radius: 25px;
         font-size: 100%;
         font-family: sans-serif;
-        vertical-align: middle;
+        /* vertical-align: middle; */
         margin: 0px;
         cursor: pointer;
         line-height: normal;
@@ -113,8 +118,8 @@ body {
 }
 
 #profile {
-    height: 38px;
-    width: 38px;
+    height: 30px;
+    width: 30px;
 }
 
 #dropdown {

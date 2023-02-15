@@ -7,6 +7,7 @@ import profileicon from "../../images/usericon.png"
 import notice from "../../images/notice.png"
 // import logo from "../../images/b.png"
 import * as sessionActions from '../../store/session'
+import pushingp from "../../images/pushp.png"
 
 
 function Navigation() {
@@ -80,7 +81,8 @@ function Navigation() {
                         <input id="search" type="search" placeholder="🔍 Search bar is under maintenance..." name="search"></input>
                 </label>
                 <div>
-                <NavLink exact to="/profile"><img id="profile" src={profileicon} alt="profile" /></NavLink>
+
+                <NavLink exact to="/profile"><img id="profile" src={pushingp} alt="profile" /></NavLink>
                 {buttonlogout}
                 </div>
                 </div>

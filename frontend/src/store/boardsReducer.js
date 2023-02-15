@@ -28,6 +28,7 @@ export const fetchBoards = () => async (dispatch) => {
 
     if (res.ok) {
         const boards = await res.json();
+        debugger
         dispatch(receiveBoards(boards));
     }
 }

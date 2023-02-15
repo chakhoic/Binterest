@@ -6,10 +6,10 @@ import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import CreateBinForm from './components/BinFormPage';
 import ProfilePage from './components/ProfilePage';
-// import BoardForm from './components/BoardFormPage';
 import { useSelector } from 'react-redux';
 import Feed from './components/Feed';
-// import BinIndex from './components/BinShowPage';
+import WaterfallPage from './components/WaterFall';
+import BinIndex from './components/BinShowPage';
 
 
 
@@ -37,15 +37,19 @@ function App() {
       < Router >
         <Navigation />
         <Switch>
+          <Route path='/feed'>
+            <WaterfallPage bins={bins} />
+          </Route>
+          <Route path="/index">
+            <BinIndex />
+          </Route>
           <Route path='/createbin'>
             <CreateBinForm setNewBin={setNewBin} />
           </Route>
           <Route path='/createboard'>
-            {/* <BoardForm /> */}
           </Route>
           <Route path='/profile'>
             <ProfilePage />
-            {/* <BinIndex /> */}
           </Route>
           <Route path="/login">
             <LoginFormPage />

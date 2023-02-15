@@ -31,26 +31,20 @@ class Api::BoardsController < ApplicationController
         end
     end
 
-    # def update
-    #     @board = Board.find_by(id: params[:id])
+    def update
+        @board = Board.find_by(id: params[:id])
+        @board.title = params[:title]
 
-    #     @board.title = params[:board][:title]
-    #     @board.description = params[:board][:description]
+        if @board.save
+            render :show
+        else
+            flash.now[:errors] = @board.errors.full_messages
+        end
+    end
 
-    #     if @board.save
-    #         redirect_to user_url(@board.user)
-    #     else
-    #         flash.now[:errors] = @board.errors.full_messages
-    #         render :edit
-    #     end
-    # end
-
-    # def edit
-    #     @board = Board.find(params[:id])
-    # end
     private
 
     def boards_params
-    params.require(:board).permit(:title)
+    params.require(:board).permit(:title, :author_id)
   end
 end
