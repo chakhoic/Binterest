@@ -1,5 +1,5 @@
 class Api::BinsController < ApplicationController
-    wrap_parameters include: Post.attribute_names + [:photo]
+    wrap_parameters include: Bin.attribute_names + [:photo]
     before_action :require_logged_in, only: [:create, :destroy]
 
     def show
@@ -13,8 +13,8 @@ class Api::BinsController < ApplicationController
     end
 
     def create
-        post = Post.new(bins_params)
-        if post.save
+        bin = Bin.new(bins_params)
+        if bin.save
             render partial: "api/bins/bin", locals: { bin: bin }
         else
             render json: bin.errors.full_messages, status: 422
@@ -26,10 +26,12 @@ class Api::BinsController < ApplicationController
 
         if @bin&.delete
             @user = current_user
-            redirect_to "api"
+            # redirect_to "api"
+            render json:["Deleted"]
 
         else
-            redirect_to "users"
+            # redirect_to "users"
+            render json:["Error"]
         end
     end
 

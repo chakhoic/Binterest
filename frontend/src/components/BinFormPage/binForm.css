@@ -36,3 +36,8 @@
     height: 600px;
     align-items: center;
 }
+
+img {
+    height: 100px;
+    margin: 5px
+}

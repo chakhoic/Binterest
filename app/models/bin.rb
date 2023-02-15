@@ -1,8 +1,8 @@
 class Bin < ApplicationRecord
   validates :title, presence: true
   validates :author_id, :board_id, presence: true
-  validate :ensure_photo
-  before_validation :generate_default_pic
+  # validate :ensure_photo
+  # before_validation :generate_default_pic
     
     has_one_attached :photo
 

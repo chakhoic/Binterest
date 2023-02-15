@@ -22,10 +22,12 @@ class Api::BoardsController < ApplicationController
         @board = current_user.boards.find_by(id: params[:id])
 
         if @board&.delete
-            @user = current_user
-            render "users/show"
+            # @user = current_user
+            # render "users/show"
+            render json: ["Deleted"]
         else
-            redirect_to users_url
+            # redirect_to users_url
+            render json: ["Error"]
         end
     end
 

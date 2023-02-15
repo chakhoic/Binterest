@@ -78,6 +78,7 @@ const ProfilePage = (props) => {
             </div>
             <h2>Created Boards</h2>
             <div id="boarddiv">
+            <br></br>
             {boardsIndex}
             </div>
             <hr></hr>

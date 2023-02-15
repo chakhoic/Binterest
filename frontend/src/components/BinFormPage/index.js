@@ -6,10 +6,11 @@ import "./binForm.css"
 
 const CreateBinForm = ({ setNewBin }) => {
     const dispatch = useDispatch();
-    const [img, setImg] = useState('');
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [photoFile, setPhotoFile] = useState(null);
+      const [photoUrl, setPhotoUrl] = useState(null);
+
 
 
     const handleInput = e => {
@@ -32,6 +33,7 @@ const CreateBinForm = ({ setNewBin }) => {
             const bin = await response.json();
             setTitle("");
             setPhotoFile(null);
+            // setBody("");
             setNewBin(bin);
         }
     }
@@ -39,7 +41,15 @@ const CreateBinForm = ({ setNewBin }) => {
     const handleFile = ({ currentTarget }) => {
         const file = currentTarget.files[0];
         setPhotoFile(file);
+        if (file) {
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(file);
+            fileReader.onload = () => setPhotoUrl(fileReader.result);
+        }; 
     }
+
+    let preview = null;
+    if (photoUrl) preview = <img src={photoUrl} alt="" />;
 
     return (
         <>
@@ -48,13 +58,15 @@ const CreateBinForm = ({ setNewBin }) => {
             <div id="box3">
 
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="post-title">Add your title</label>
+                        <label htmlFor="bin-title">Add your title</label>
                         <input type="text"
-                            id="post-title"
+                            id="bin-title"
                             value={title}
                             onChange={handleInput}
                             required />
                         <input type="file" onChange={handleFile} />
+                        <h3>Image preview</h3>
+                        {preview}
                         <button>Save</button>
                     </form>
             </div>

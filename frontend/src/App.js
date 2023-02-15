@@ -7,9 +7,9 @@ import Navigation from "./components/Navigation";
 import CreateBinForm from './components/BinFormPage';
 import ProfilePage from './components/ProfilePage';
 // import BoardForm from './components/BoardFormPage';
-import BinIndex from './components/BinShowPage';
 import { useSelector } from 'react-redux';
 import Feed from './components/Feed';
+// import BinIndex from './components/BinShowPage';
 
 
 
@@ -45,7 +45,7 @@ function App() {
           </Route>
           <Route path='/profile'>
             <ProfilePage />
-            <BinIndex bins={bins} />
+            {/* <BinIndex /> */}
           </Route>
           <Route path="/login">
             <LoginFormPage />
