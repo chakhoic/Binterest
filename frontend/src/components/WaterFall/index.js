@@ -18,6 +18,8 @@ const WaterfallPage = () => {
                 <div key={bin.id} className="waterfall-grid-item">
                     {/* <img src={bin.photo} /> */}
                     <h2>{bin.title}</h2>
+                    <img src={bin.photo.photoUrl} alt="" />
+
                     {/* <p>{bin.body}</p> */}
                 </div>
             ))}

@@ -45,7 +45,8 @@ ApplicationRecord.transaction do
     board_id: 1,
     body: 'testing2'
   )
-
+  file = URI.open("https://binteresting-seeds.s3.us-east-2.amazonaws.com/boney.jpg")
+  b2.photo.attach(io: file, filename: "boney.jpg")
 
   b1 = Bin.create!(
     title: 'test1',
@@ -53,12 +54,8 @@ ApplicationRecord.transaction do
     board_id: 1,
     body: 'testing1'
   )
-
-  # # Open the file using open-uri
-  # file = URI.open("https://binteresting-prod.s3.us-east-2.amazonaws.com/boney.jpg")
-
-  # # Attach the file to the bin
-  # b1.photo.attach(io: file, filename: "boney.jpg")
+  file = URI.open("https://binteresting-seeds.s3.us-east-2.amazonaws.com/boney.jpg")
+  b1.photo.attach(io: file, filename: "boney.jpg")
 
 end
 

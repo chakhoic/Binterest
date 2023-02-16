@@ -19,7 +19,7 @@ console.log(bins)
                     <br></br>
                     <li key={bin.id}>
                         <h2>{bin.title}</h2>
-                        <img src={bin.photoUrl} alt="" />
+                        <img src={bin.photo.photoUrl} alt="" />
                     </li>
                     </>
                 );

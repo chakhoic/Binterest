@@ -33,8 +33,8 @@ const BoardItem = (props) => {
         <div id="board2">
             <div id="images"></div>
             <div id="title2">{props.board.title}
-            <div id="ex" onClick={handleDelete}>X</div>
-            <div id="edits" onClick={handleOpenModal}>O</div>
+                <div id="ex" onClick={handleDelete}>✖</div>
+            <div id="edits" onClick={handleOpenModal}>✎</div>
             </div>
             <div id="modal">
                 {/* <button id="plus" onClick={}><img id="plus" src={plus} alt="plus" /></button> */}
