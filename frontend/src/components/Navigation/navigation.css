@@ -10,12 +10,11 @@
     margin-top: -15px;
     margin-left: -5px;
     padding-top: 15px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-width: 0.5px;
-    box-shadow: 5px 10px 18px lightgray;
 }
 
 #bar {
@@ -34,7 +33,7 @@
     margin-right: 10px;
     min-width: 60px;
     box-sizing: border-box;
-    display: inline-block;
+    /* display: inline-block; */
     background-color: rgba(255, 0, 0, 0.805);
     color: white;
     padding-left: 15px;
@@ -88,7 +87,7 @@
 
 #signup {
     float: right;
-    margin-left: 1070px;
+    margin-left: 1030px;
     min-width: 60px;
         box-sizing: border-box;
         display: inline-block;
@@ -161,7 +160,17 @@ body {
         font-size: 15px;
 }
 
-/* #notice {
-    height: 55px;
-    width: 55px;
-} */
+#link {
+    height: 30px;
+    width: 30px;
+}
+
+#git {
+    height: 30px;
+    width: 30px;
+}
+
+#eagle {
+    height: 30px;
+    width: 30px;
+}

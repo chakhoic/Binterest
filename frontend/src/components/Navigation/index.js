@@ -8,6 +8,9 @@ import notice from "../../images/notice.png"
 // import logo from "../../images/b.png"
 import * as sessionActions from '../../store/session'
 import pushingp from "../../images/pushp.png"
+import link from "../../images/link.png"
+import git from "../../images/git.png"
+import eagle from "../../images/eagle.png"
 
 
 function Navigation() {
@@ -41,10 +44,6 @@ function Navigation() {
         history.push("/createbin")
     }
 
-    // const profileButton = () => {
-    //     history.push("/profile")
-    // }
-
     const dispatch = useDispatch()
 
     const handleLogout = (e) => {
@@ -57,7 +56,6 @@ function Navigation() {
     const buttonsignup = sessionUser ? null : <button id="signup" onClick={signupButton}>Sign Up</button>
     const buttonlogin = sessionUser ? null : <button id="login" onClick={loginButton}>Log In</button>
     const buttoncreate = sessionUser ? <button id="dropdown" onClick={createButton}> Create Bin ⬇ </button> : null
-    // const buttonprofile = sessionUser ? <button id="profile" onClick={profileButton}>Profile</button> : null
 
     if (!sessionUser) {
     return (
@@ -66,6 +64,8 @@ function Navigation() {
             <NavLink exact to="/"><img id="home" src={home} alt="home" /></NavLink>
             {buttonsignup}
             {buttonlogin}
+                <a href='https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran'><img id="eagle" src={eagle} alt="eagle" /></a>
+
         </div>
         </>
     );
@@ -81,6 +81,8 @@ function Navigation() {
                         <input id="search" type="search" placeholder="🔍 Search bar is under maintenance..." name="search"></input>
                 </label>
                 <div>
+                        <a href="https://github.com/chakhoic/Binterest"><img id="git" src={git} alt="git" /></a>
+                        <a href='https://www.linkedin.com/in/chak-hoi-chan-19672046/'><img id="link" src={link} alt="link" /></a>
 
                 <NavLink exact to="/profile"><img id="profile" src={pushingp} alt="profile" /></NavLink>
                 {buttonlogout}

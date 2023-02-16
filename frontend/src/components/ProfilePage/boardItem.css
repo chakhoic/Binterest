@@ -1,17 +1,17 @@
 #images {
     border: 2px solid black;
-        border-radius: 10px;
-    border-bottom: 1px solid black;
-    height: 120px;
-        background-color: rgba(245, 245, 245, 0.76);
+        border-radius: 12px;
+    border: 5px inset black;
+    height: 175px;
+    width: 280px;
+    background-image: "../../images/b.png";
         border-color: lightgray;
-        background-image: "../../images/b.png";
+        background-color: whitesmoke;
 }
 
 #board2 {
-
-    min-width: 230px;
-    height: 130px;
+    min-width: 250px;
+    height: 200px;
     margin-right: 50px;
     cursor: pointer;
     margin-bottom: 50px;

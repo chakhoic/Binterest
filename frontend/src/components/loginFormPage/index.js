@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import "./loginForm.css";
 import logo from "../../images/b.png";
 import { NavLink } from 'react-router-dom';
@@ -14,6 +14,8 @@ function LoginFormPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
+    const history = useHistory()
+
 
     if (sessionUser) return <Redirect to="/" />;
 
@@ -35,10 +37,12 @@ function LoginFormPage() {
             });
     }
 
-    const demoLogin = (e) => {
-        e.preventDefault()
-        dispatch(sessionActions.login({ email: 'demo@user.io', password: 'password'}))
-    }
+    const demoLogin = async (e) => {
+        e.preventDefault();
+        await dispatch(sessionActions.login({ email: 'demo@user.io', password: 'password' }));
+        history.push('/feed');
+    };
+
 
     return (
         <div id="loginback">
@@ -91,7 +95,7 @@ function LoginFormPage() {
              <br></br>
 
             <p>By continuing, you agree to 🅱interest's Terms of Service</p>
-                    <hr></hr>
+            <hr></hr>
             <NavLink id="notyet" exact to="/signup"> Not on Pinterest yet? Sign up </NavLink>
         </form>
         </div>

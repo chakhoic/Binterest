@@ -41,3 +41,9 @@ img {
     height: 100px;
     margin: 5px
 }
+
+#add {
+    font-family: sans-serif;
+    font-size: 30px;
+    color: rgba(128, 128, 128, 0.778);
+}

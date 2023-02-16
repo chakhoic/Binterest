@@ -1,19 +1,11 @@
-.waterfall-grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 20px;
-}
-
-.waterfall-grid-item {
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.waterfall-grid-item img {
+/* PinterestFeed.css */
+#feedback {
     width: 100%;
-    height: auto;
-}
+    background-image: url("../../images/grey.png");
+    background-size: 100% 100%;
+    /* background-color: red; */
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    /* padding-bottom: 500px; */
 
+}

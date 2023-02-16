@@ -7,9 +7,8 @@ import Navigation from "./components/Navigation";
 import CreateBinForm from './components/BinFormPage';
 import ProfilePage from './components/ProfilePage';
 import { useSelector } from 'react-redux';
-import Feed from './components/Feed';
 import WaterfallPage from './components/WaterFall';
-import BinIndex from './components/BinShowPage';
+import Feed from './components/WaterFall';
 
 
 
@@ -38,10 +37,7 @@ function App() {
         <Navigation />
         <Switch>
           <Route path='/feed'>
-            <WaterfallPage bins={bins} />
-          </Route>
-          <Route path="/index">
-            <BinIndex />
+            <Feed />
           </Route>
           <Route path='/createbin'>
             <CreateBinForm setNewBin={setNewBin} />
@@ -56,9 +52,6 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
-          <Route path="/">
-            <Feed />
-          </Route>
           </Route>
         </Switch>
       </Router>

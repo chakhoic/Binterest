@@ -1,30 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import './water.css';
+import luis from "../../images/feed/5.jpeg";
 
-const WaterfallPage = () => {
-    const [bins, setBins] = useState([]);
-
-
-    useEffect(() => {
-        fetch('/api/bins')
-            .then(response => response.json())
-            .then(data => setBins(data.bins))
-
-    }, []);
+const Feed = () => {
 
     return (
-        <div className="waterfall-grid-container">
-            {bins && bins.map(bin => (
-                <div key={bin.id} className="waterfall-grid-item">
-                    {/* <img src={bin.photo} /> */}
-                    <h2>{bin.title}</h2>
-                    <img src={bin.photo.photoUrl} alt="" />
+        <div id="feedback">
+        <div id="binz">
+                <br></br>
+            <br></br>
+                <img src={luis} alt="" />
+                <img src={luis} alt="" />
 
-                    {/* <p>{bin.body}</p> */}
+                <img src={luis} alt="" />
+
+                <img src={luis} alt="" />
+
+                <img src={luis} alt="" />
+
+                <img src={luis} alt="" />
+
+                <img src={luis} alt="" />
+
+                <img src={luis} alt="" />
+
                 </div>
-            ))}
-        </div>
+                </div>
     );
 };
 
-export default WaterfallPage;
+export default Feed;

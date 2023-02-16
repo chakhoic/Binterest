@@ -1,9 +1,10 @@
 #profileback {
-    width: 100%;
-    background-image: url("../../images/marble.jpeg");
-    background-size: 100% 100%;
+    /* width: 100%; */
+    background-image: url("../../images/marble2.jpeg");
+    background-size: 100% 120%;
     /* background-color: red; */
-    background-blend-mode: multiply;
+    /* background-blend-mode: multiply; */
+    /* background-repeat: no-repeat; */
     background-repeat: no-repeat;
     /* padding-bottom: 500px; */
 }
@@ -42,8 +43,8 @@
 }
 
 #alvin {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
 }
 
 
@@ -152,3 +153,18 @@
     padding-right: 100px;
 }
 
+#binz {
+    display: flex;
+    margin: -100px;
+    justify-content: center;
+    padding: 150px;
+        flex-wrap: wrap;
+}
+
+#binz img {
+    border: 1px groove rgba(255, 255, 255, 0.868);
+    justify-content: center;
+    /* padding: 30px; */
+        height: fit-content;
+    border-radius: 10px;
+}

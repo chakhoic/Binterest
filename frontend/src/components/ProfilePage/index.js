@@ -4,9 +4,13 @@ import { NavLink, Redirect, useHistory } from 'react-router-dom';
 import plus from "../../images/plus.png"
 import { useSelector, useDispatch } from 'react-redux';
 import * as boardActions from '../../store/boardsReducer'
-import alvin from "../../images/alvin.png";
 import share from "../../images/shareedit.png";
 import BoardItem from './boardItem';
+import luis from "../../images/feed/5.jpeg";
+import alvin2 from "../../images/00.jpeg"
+import alvin from "../../images/alvin.png"
+
+
 
 
 
@@ -24,7 +28,6 @@ const ProfilePage = (props) => {
     }, []);
 
     const sessionUser = useSelector(state => state.session.user)
-    // useEffect(()=> {dispatch(boardActions.fetchBoards(sessionUser.id))}, [])
 
     const boardsIndex = boards.map((board) => <BoardItem setShowModal={setShowModal} board={board} />)
     const [title, setTitle] = useState('')
@@ -56,7 +59,7 @@ const ProfilePage = (props) => {
             <ul id="share">
             <img id="shares" src={share} alt="share" width="260" height="90" />
             </ul>
-            <br></br>
+            <hr></hr>
             <div id="modal">
             <button id ="plus" onClick={handleOpenModal}><img id="plus" src={plus} alt="plus" /></button>
             {showModal && (
@@ -79,14 +82,30 @@ const ProfilePage = (props) => {
                 </div>
             )}
             </div>
+            
             <h2>Created Boards</h2>
+            <br></br>
+            <br></br>
             <div id="boarddiv">
             <br></br>
             {boardsIndex}
             </div>
             <hr></hr>
             <div id="binsdiv">
+                <br></br>
+                <br></br>
+
             <h2>Unorganized Bins</h2>
+            <div id="binz">
+                    <img src={alvin2} />
+                    <img src={luis} />
+                    <img src={luis} />
+                    <img src={luis} />
+                    <img src={luis} />
+                    <img src={alvin2} />
+                    <img src={luis} />
+                    <img src={luis} />
+            </div>
             <h1 id ="place">hi</h1>
             <h1 id="place">hi</h1>
             </div>
