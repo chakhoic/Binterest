@@ -37,7 +37,6 @@ const BoardItem = (props) => {
             <div id="edits" onClick={handleOpenModal}>✎</div>
             </div>
             <div id="modal">
-                {/* <button id="plus" onClick={}><img id="plus" src={plus} alt="plus" /></button> */}
                 {showModal && (
                     <div className="modal-background">
                         <div className="modal-content">
@@ -58,7 +57,6 @@ const BoardItem = (props) => {
                     </div>
                 )}
             </div>
-            {/* <div id="edit">Edit</div> */}
         </div>
 
 

@@ -3,9 +3,6 @@ import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './navigation.css';
 import home from "../../images/home.png";
-import profileicon from "../../images/usericon.png"
-import notice from "../../images/notice.png"
-// import logo from "../../images/b.png"
 import * as sessionActions from '../../store/session'
 import pushingp from "../../images/pushp.png"
 import link from "../../images/link.png"
@@ -15,20 +12,6 @@ import eagle from "../../images/eagle.png"
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
-
-    // let sessionLinks;
-    // if (sessionUser) {
-    //     sessionLinks = (
-    //         <ProfileButton user={sessionUser} />
-    //     );
-    // } else {
-    //     sessionLinks = (
-    //         <>
-    //             <NavLink to="/login">Log In</NavLink>
-    //             <NavLink to="/signup">Sign Up</NavLink>
-    //         </>
-    //     );
-    // }
 
     const history = useHistory()
 

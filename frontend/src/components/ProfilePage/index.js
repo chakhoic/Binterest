@@ -6,12 +6,34 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as boardActions from '../../store/boardsReducer'
 import share from "../../images/shareedit.png";
 import BoardItem from './boardItem';
-import luis from "../../images/feed/5.jpeg";
-import alvin2 from "../../images/00.jpeg"
-import alvin from "../../images/alvin.png"
-
-
-
+import alvin2 from "../../images/00.jpeg";
+import alvin from "../../images/alvin.png";
+import a1 from "../../images/feed/1.jpeg";
+import a2 from "../../images/feed/2.png";
+import a3 from "../../images/feed/3.png";
+import a4 from "../../images/feed/4.png";
+import a5 from "../../images/feed/5.jpeg";
+import a6 from "../../images/feed/6.jpeg";
+import a7 from "../../images/feed/7.png";
+import a8 from "../../images/feed/8.png";
+import a9 from "../../images/feed/9.png";
+import a10 from "../../images/feed/10.png";
+import a11 from "../../images/feed/11.png";
+import a12 from "../../images/feed/12.png";
+import jt from "../../images/feed/jt.png"
+import dan from "../../images/feed/dan.png";
+import jan from "../../images/feed/jan.png";
+import jiong from "../../images/feed/jiong.jpeg";
+import kev from "../../images/feed/kev.jpeg";
+import log from "../../images/feed/log.png";
+import mei from "../../images/feed/mei.jpeg";
+import sti from "../../images/feed/sti.png";
+import yen from "../../images/feed/yen.png";
+import yo from "../../images/feed/yo.png";
+import xd from "../../images/feed/xd.png";
+import born from "../../images/feed/born.png";
+import jo from "../../images/feed/jo.jpg";
+// import tim from "../../images/feed/xd.png";
 
 
 
@@ -41,6 +63,9 @@ const ProfilePage = (props) => {
         }
         return dispatch(boardActions.createBoard(makeboard))
     }
+
+    const randoms = [a1, a2].sample
+    console.log(randoms)
 
     if (!sessionUser) return <Redirect to="/login" />
     return (
@@ -98,13 +123,31 @@ const ProfilePage = (props) => {
             <h2>Unorganized Bins</h2>
             <div id="binz">
                     <img src={alvin2} />
-                    <img src={luis} />
-                    <img src={luis} />
-                    <img src={luis} />
-                    <img src={luis} />
-                    <img src={alvin2} />
-                    <img src={luis} />
-                    <img src={luis} />
+                    <img src={a1} />
+                    <img src={sti} height="500px" width="300px" />
+                    <img src={yen} height="200px" width="400px" />
+                    <img src={a2} />
+                    <img src={a3} />
+                    <img src={dan} height="500px" width="300px" />
+                    <img src={a4} />
+                    <img src={yo} />
+                    <img src={born} height="200px" width="250px" />
+                    <img src={a5} />
+                    <img src={mei} height="350px" width="350px" />
+                    <img src={jo} height="300px" width="300px" />
+                    <img src={a6} />
+                    <img src={jan} height="350px" width="250px" />
+                    <img src={jt} height="500px" width="500px" />
+                    <img src={a7} />
+                    <img src={a8} />
+                    <img src={jiong} height="500px" width="300px" />
+                    <img src={a9} />
+                    <img src={a10} />
+                    <img src={kev} height="350px" width="250px" />
+                    <img src={a11} />
+                    <img src={log} />
+                    <img src={a12} />
+                    <img src={xd} />
             </div>
             <h1 id ="place">hi</h1>
             <h1 id="place">hi</h1>
