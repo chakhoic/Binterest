@@ -33,7 +33,7 @@ import yo from "../../images/feed/yo.png";
 import xd from "../../images/feed/xd.png";
 import born from "../../images/feed/born.png";
 import jo from "../../images/feed/jo.jpg";
-// import tim from "../../images/feed/xd.png";
+import tim from "../../images/feed/tim.png";
 
 
 
@@ -114,13 +114,15 @@ const ProfilePage = (props) => {
             <div id="boarddiv">
             <br></br>
             {boardsIndex}
+            <br></br>
             </div>
+            <br></br>
+            <br></br>
             <hr></hr>
             <div id="binsdiv">
                 <br></br>
                 <br></br>
-
-            <h2>Unorganized Bins</h2>
+            <h2>Saved Bins</h2>
             <div id="binz">
                     <img src={alvin2} />
                     <img src={a1} />
@@ -137,10 +139,11 @@ const ProfilePage = (props) => {
                     <img src={jo} height="300px" width="300px" />
                     <img src={a6} />
                     <img src={jan} height="350px" width="250px" />
-                    <img src={jt} height="500px" width="500px" />
+                    <img src={jt} height="400px" width="400px" />
                     <img src={a7} />
                     <img src={a8} />
                     <img src={jiong} height="500px" width="300px" />
+                    <img src={tim} height="300px" width="300px" />
                     <img src={a9} />
                     <img src={a10} />
                     <img src={kev} height="350px" width="250px" />

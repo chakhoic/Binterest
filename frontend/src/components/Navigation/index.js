@@ -47,7 +47,7 @@ function Navigation() {
             <NavLink exact to="/"><img id="home" src={home} alt="home" /></NavLink>
             {buttonsignup}
             {buttonlogin}
-                <a href='https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran'><img id="eagle" src={eagle} alt="eagle" /></a>
+                <a href='kahoot.it'><img id="eagle" src={eagle} alt="eagle" /></a>
 
         </div>
         </>
