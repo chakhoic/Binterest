@@ -10,6 +10,7 @@ body {
             background-image: url("images/white6.jpg");
             background-size: 100% 100%;
             background-repeat: no-repeat;
+            zoom: 90%;
 }
 
 html,

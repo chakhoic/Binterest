@@ -20,27 +20,6 @@ const CreateBinForm = ({ setNewBin }) => {
     const handleInput = e => {
         setTitle(e.currentTarget.value);
     }
-
-//     const handleSubmit = async e => {
-//         e.preventDefault();
-//         const formData = new FormData();
-//         formData.append('bin[title]', title);
-//         if (photoFile) {
-//             formData.append('bin[photo]', photoFile);
-//         }
-// // fetch route?
-//         const response = await fetch('/api/bins', {
-//             method: 'POST',
-//             body: formData
-//         });
-//         if (response.ok) {
-//             const bin = await response.json();
-//             setTitle("");
-//             setPhotoFile(null);
-//             // setBody("");
-//             setNewBin(bin);
-//         }
-//     }
    
     const handleFile = ({ currentTarget }) => {
         const file = currentTarget.files[0];

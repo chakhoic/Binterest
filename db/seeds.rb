@@ -1,12 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
-
 
 ApplicationRecord.transaction do 
   puts "Destroying tables..."
@@ -39,23 +31,40 @@ ApplicationRecord.transaction do
     author_id: 1
   )
 
-  b2 = Bin.create!(
-    title: 'test2',
+  puts "Creating bins..."
+  
+  b1 = Bin.create!(
+    title: 'b1',
     author_id: 1,
     board_id: 1,
-    body: 'testing2'
+    body: 'liu',
   )
-  file = URI.open("https://binteresting-seeds.s3.us-east-2.amazonaws.com/boney.jpg")
-  b2.photo.attach(io: file, filename: "boney.jpg")
+  pic_b1 = URI.open("https://binz1-dev.s3.amazonaws.com/appp.jpg")
+  b1.photo.attach(io: pic_b1, filename:"b1")
+  b1.url = b1.photo.url # set the url attribute
+  b1.save!
 
-  b1 = Bin.create!(
-    title: 'test1',
+  b2 = Bin.create!(
+    title: 'b2',
+    author_id: 1,
+    board_id: 1,
+    body: 'lee',
+  )
+  pic_b2 = URI.open("https://binz1-dev.s3.amazonaws.com/appp.jpg")
+  b2.photo.attach(io: pic_b2, filename:"b2")
+  b2.url = b2.photo.url # set the url attribute
+  b2.save!
+
+  b3 = Bin.create!(
+    title: 'b3',
     author_id: 1,
     board_id: 1,
     body: 'testing1'
   )
-  file = URI.open("https://binteresting-seeds.s3.us-east-2.amazonaws.com/boney.jpg")
-  b1.photo.attach(io: file, filename: "boney.jpg")
+  pic_b3 = URI.open("https://binz1-dev.s3.amazonaws.com/appp.jpg")
+  b3.photo.attach(io: pic_b3, filename:"b3")
+  b3.url = b3.photo.url # set the url attribute
+  b3.save!
+
 
 end
-

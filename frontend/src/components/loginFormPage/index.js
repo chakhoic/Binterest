@@ -46,6 +46,7 @@ function LoginFormPage() {
 
     return (
         <div id="loginback">
+            <br></br>
         <div id="box">
             <img id="logo" src={logo} alt="logo" width="100" height="100" />
                 <h1>Welcome to 🅱interest™</h1>
@@ -99,6 +100,9 @@ function LoginFormPage() {
             <NavLink id="notyet" exact to="/signup"> Not on Pinterest yet? Sign up </NavLink>
         </form>
         </div>
+            <br></br>
+            <br></br>
+            <br></br>
         </div>
     );
 }

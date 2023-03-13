@@ -42,6 +42,7 @@ function SignupFormPage() {
 
     return (
         <div id="signupback">
+            <br></br>
         <div id="box2">
             <img id="logo" src={logo} alt="logo" width="100" height="100" />
                 <h1>Welcome to 🅱interest™</h1>

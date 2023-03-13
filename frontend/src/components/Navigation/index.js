@@ -47,7 +47,7 @@ function Navigation() {
             <NavLink exact to="/"><img id="home" src={home} alt="home" /></NavLink>
             {buttonsignup}
             {buttonlogin}
-                <a href='kahoot.it'><img id="eagle" src={eagle} alt="eagle" /></a>
+                <a href="https://github.com/chakhoic/Binterest"><img id="eagle" src={eagle} alt="eagle" /></a>
 
         </div>
         </>
@@ -64,7 +64,7 @@ function Navigation() {
                         <input id="search" type="search" placeholder="🔍 Search bar is under maintenance..." name="search"></input>
                 </label>
                 <div>
-                        <a href="https://github.com/chakhoic/Binterest"><img id="git" src={git} alt="git" /></a>
+                        <a href="https://github.com/chakhoic"><img id="git" src={git} alt="git" /></a>
                         <a href='https://www.linkedin.com/in/chak-hoi-chan-19672046/'><img id="link" src={link} alt="link" /></a>
 
                 <NavLink exact to="/profile"><img id="profile" src={pushingp} alt="profile" /></NavLink>

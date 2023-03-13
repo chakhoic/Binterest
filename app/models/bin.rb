@@ -14,11 +14,11 @@ class Bin < ApplicationRecord
         class_name: :User,
         foreign_key: :author_id
 
-  def ensure_photo
-    unless self.photo.attached?
-      errors.add(:photo, "must be attached")
-    end
-  end
+  # def ensure_photo
+  #   unless self.photo.attached?
+  #     errors.add(:photo, "must be attached")
+  #   end
+  # end
 
 end
 

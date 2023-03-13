@@ -4,16 +4,18 @@ import { deleteBoard } from "../../store/boardsReducer"
 import { useSelector } from "react-redux"
 import { updateBoard } from "../../store/boardsReducer"
 import { useState } from "react"
+import { useHistory } from "react-router-dom"
 
 const BoardItem = (props) => {
     const sessionUser = useSelector(state => state.session.user)
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const history = useHistory();
     const [showModal, setShowModal] = useState(false);
     const handleOpenModal = () => setShowModal(true);
     const handleCloseModal = () => setShowModal(false);
     const [title, setTitle] = useState('')
 
-    
+
     const handleSubmit = e => {
         e.preventDefault()
         handleCloseModal()
@@ -25,16 +27,21 @@ const BoardItem = (props) => {
         dispatch(updateBoard(updatedBoard))
     }
 
+    const handleClick = e => {
+        e.preventDefault()
+        history.push(`/boards/${props.board.id}`)
+    }
+
     const handleDelete = e => {
         e.preventDefault()
         dispatch(deleteBoard(props.board.id))
     }
     return (
-        <div id="board2">
+        <div id="board2" onClick={handleClick}>
             <div id="images"></div>
             <div id="title2">{props.board.title}
                 <div id="ex" onClick={handleDelete}>✖</div>
-            <div id="edits" onClick={handleOpenModal}>✎</div>
+                <div id="edits" onClick={handleOpenModal}>✎</div>
             </div>
             <div id="modal">
                 {showModal && (

@@ -1,7 +1,8 @@
 #home {
     padding-left: 10px;
-    width: 170px;
+    width: 180px;
     height: 40px;
+    padding-top: -5px;
     margin-bottom: -10px;
 }
 
@@ -10,7 +11,7 @@
     margin-top: -15px;
     margin-left: -5px;
     padding-top: 15px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,6 +23,7 @@
     margin-top: -15px;
     margin-left: -5px;
     padding-top: 15px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -87,7 +89,7 @@
 
 #signup {
     float: right;
-    margin-left: 1030px;
+    margin-left: 1170px;
     min-width: 60px;
         box-sizing: border-box;
         display: inline-block;

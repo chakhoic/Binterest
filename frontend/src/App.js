@@ -9,21 +9,16 @@ import ProfilePage from './components/ProfilePage';
 import { useSelector } from 'react-redux';
 import WaterfallPage from './components/WaterFall';
 import Feed from './components/WaterFall';
+import BoardPage from './components/BoardPage/BoardPage'
 
 
 
 function App() {
 
   const [bins, setBins] = useState([]);
-  const [newBin, setNewBin] = useState(null);
 
   useEffect(() => {
-    if (newBin)
-      setBins(prevBins => [newBin, ...prevBins])
-  }, [newBin])
-
-  useEffect(() => {
-    const fetchBins = async (userId, boardId) => {
+    const fetchBins = async () => {
       const res = await fetch(`/api/bins`);
       setBins(await res.json());
     }
@@ -37,15 +32,18 @@ function App() {
         <Navigation />
         <Switch>
           <Route path='/feed'>
-            <Feed />
+            <Feed bins={bins}/>
           </Route>
           <Route path='/createbin'>
-            <CreateBinForm setNewBin={setNewBin} />
+            <CreateBinForm />
           </Route>
           <Route path='/createboard'>
           </Route>
           <Route path='/profile'>
             <ProfilePage />
+          </Route>
+          <Route path='/board/:boardid'>
+            <BoardPage />
           </Route>
           <Route path="/login">
             <LoginFormPage />

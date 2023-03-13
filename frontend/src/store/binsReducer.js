@@ -100,8 +100,11 @@ const binsReducer = (state = {}, action) => {
     const newState = { ...state }
 
     switch (action.type) {
+        // case RECEIVE_BINS:
+        //     return { ...state, ...action.bins };
         case RECEIVE_BINS:
-            return { ...state, ...action.bins };
+            return { ...state, ...Object.fromEntries(Object.entries(action.bins).map(([k, v]) => [k, {...v}])), allBins: Object.values(action.bins) };
+        
         case RECEIVE_BIN:
             newState[action.bin.id] = action.bin
             return newState
