@@ -1,4 +1,4 @@
-import { csrfFetch } from './csrf';
+import csrfFetch from './csrf';
 
 const SET_CURRENT_USER = 'session/setCurrentUser';
 const REMOVE_CURRENT_USER = 'session/removeCurrentUser';
@@ -77,8 +77,11 @@ export const logout = () => async (dispatch) => {
 };
 
 
-const initialState = { user: null };
 
+const initialState = { 
+    user: JSON.parse(sessionStorage.getItem("currentUser"))
+  };
+  
 const sessionReducer = (state = initialState, action) => {
     // debugger
     switch (action.type) {
