@@ -1,5 +1,5 @@
 class Api::BinsController < ApplicationController
-  wrap_parameters include: Bin.attribute_names + [:photo]
+  wrap_parameters include: Bin.attribute_names + [:photo], format: :multipart_form
   before_action :require_logged_in, only: [:create, :destroy, :index, :show]
 
   def show

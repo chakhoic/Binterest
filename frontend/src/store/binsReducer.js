@@ -4,6 +4,8 @@ import { csrfFetch } from "./csrf";
 export const RECEIVE_BIN = 'bins/RECEIVE_BIN';
 export const REMOVE_BIN = 'bins/REMOVE_BIN';
 export const RECEIVE_BINS = 'bins/RECEIVE_BINS';
+// export const ADD_BIN = 'bins/ADD_BIN'
+
 
 
 // ACTION CREATORS
@@ -21,6 +23,13 @@ export const removeBin = binId => ({
     type: REMOVE_BIN,
     binId
 });
+
+// export const addBin = binObj => {
+//     return {
+//         type: ADD_BIN,
+//         binObj
+//     }
+// }
 
 // THUNK ACTIONS
 export const fetchBins = () => async (dispatch) => {
