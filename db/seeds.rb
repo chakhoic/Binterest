@@ -1,8 +1,8 @@
-require "open-uri"
 
 ApplicationRecord.transaction do 
-  puts "Destroying tables..."
-  # Unnecessary if using `rails db:seed:replant`
+
+  require "open-uri"
+
   Bin.destroy_all
   Board.destroy_all
   User.destroy_all
@@ -39,9 +39,8 @@ ApplicationRecord.transaction do
     board_id: 1,
     body: 'liu',
   )
-  pic_b1 = URI.open("https://binz1-dev.s3.amazonaws.com/appp.jpg")
+  pic_b1 = URI.open("https://binz1-seeds.s3.amazonaws.com/appp.jpg")
   b1.photo.attach(io: pic_b1, filename:"b1")
-  b1.url = b1.photo.url # set the url attribute
   b1.save!
 
   b2 = Bin.create!(
@@ -50,9 +49,8 @@ ApplicationRecord.transaction do
     board_id: 1,
     body: 'lee',
   )
-  pic_b2 = URI.open("https://binz1-dev.s3.amazonaws.com/appp.jpg")
+  pic_b2 = URI.open("https://binz1-seeds.s3.amazonaws.com/appp.jpg")
   b2.photo.attach(io: pic_b2, filename:"b2")
-  b2.url = b2.photo.url # set the url attribute
   b2.save!
 
   b3 = Bin.create!(
@@ -61,10 +59,9 @@ ApplicationRecord.transaction do
     board_id: 1,
     body: 'testing1'
   )
-  pic_b3 = URI.open("https://binz1-dev.s3.amazonaws.com/appp.jpg")
+  pic_b3 = URI.open("https://binz1-seeds.s3.amazonaws.com/appp.jpg")
   b3.photo.attach(io: pic_b3, filename:"b3")
   b3.url = b3.photo.url # set the url attribute
   b3.save!
-
 
 end
