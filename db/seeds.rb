@@ -1,6 +1,3 @@
-
-ApplicationRecord.transaction do 
-
   require "open-uri"
 
   Bin.destroy_all
@@ -64,4 +61,3 @@ ApplicationRecord.transaction do
   b3.url = b3.photo.url # set the url attribute
   b3.save!
 
-end
