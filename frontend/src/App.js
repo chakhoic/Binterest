@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import WaterfallPage from './components/WaterFall';
 import Feed from './components/WaterFall';
 import BoardPage from './components/BoardPage/BoardPage'
+import BinPage from './components/BinPage/BinPage'
 
 
 
@@ -42,8 +43,12 @@ function App() {
           <Route path='/profile'>
             <ProfilePage />
           </Route>
-          <Route path='/board/:boardid'>
+          <Route path='/boards/:boardid'>
             <BoardPage />
+          </Route>
+
+          <Route path='/bins/:binid'>
+            <BinPage />
           </Route>
           <Route path="/login">
             <LoginFormPage />

@@ -1,11 +1,11 @@
-
-function BoardPage() {
+function BinPage() {
 
     return (
         <>
         <h1>hi</h1>
+
         </>
     );
 }
 
-export default BoardPage;
+export default BinPage;
