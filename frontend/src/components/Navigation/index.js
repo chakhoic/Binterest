@@ -57,7 +57,7 @@ function Navigation() {
             <>
             <div id="bar2">
                 <div>
-                <NavLink exact to="/"><img id="home" src={home} alt="home" /></NavLink>
+                <NavLink exact to="/feed"><img id="home" src={home} alt="home" /></NavLink>
                 {buttoncreate}
                 </div>
                 <label >

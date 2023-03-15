@@ -47,6 +47,7 @@ export const login = (user) => async (dispatch) => {
     });
     const data = await response.json();
     dispatch(setCurrentUser(data.user));
+    storeCurrentUser(data.user);
     return response;
 };
 // catch the error, dispatch error action to the reducer

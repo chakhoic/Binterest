@@ -36,7 +36,7 @@
     board_id: 1,
     body: 'liu',
   )
-  pic_b1 = URI.open("https://binz1-seeds.s3.amazonaws.com/appp.jpg")
+  pic_b1 = URI.open("https://binz1-seeds.s3.amazonaws.com/Cat03.jpeg")
   b1.photo.attach(io: pic_b1, filename:"b1")
   b1.save!
 
@@ -56,7 +56,7 @@
     board_id: 1,
     body: 'testing1'
   )
-  pic_b3 = URI.open("https://binz1-seeds.s3.amazonaws.com/appp.jpg")
+  pic_b3 = URI.open("https://binz1-seeds.s3.amazonaws.com/car.jpeg")
   b3.photo.attach(io: pic_b3, filename:"b3")
   b3.url = b3.photo.url # set the url attribute
   b3.save!
