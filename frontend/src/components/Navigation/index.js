@@ -45,37 +45,37 @@ function Navigation() {
         <>
         <div id="bar">
             <NavLink exact to="/"><img id="home" src={home} alt="home" /></NavLink>
+            <a href="https://github.com/chakhoic/Binterest"><img id="eagle" src={eagle} alt="eagle" /></a>
             {buttonsignup}
             {buttonlogin}
-                <a href="https://github.com/chakhoic/Binterest"><img id="eagle" src={eagle} alt="eagle" /></a>
 
         </div>
         </>
     );
 } else {
-        return (
-            <>
+    return (
+        <>
             <div id="bar2">
-                <div>
-                <NavLink exact to="/feed"><img id="home" src={home} alt="home" /></NavLink>
-                {buttoncreate}
+                <div id="homelink">
+                    <NavLink exact to="/feed"><img id="home" src={home} alt="home" /></NavLink>
                 </div>
-                <label >
-                        <input id="search" type="search" placeholder="🔍 Search bar is under maintenance..." name="search"></input>
+                {buttoncreate}
+
+                <label>
+                    <input id="search" type="search" placeholder="🔍 Search bar is under maintenance..." name="search"></input>
                 </label>
                 <div>
-                        <a href="https://github.com/chakhoic"><img id="git" src={git} alt="git" /></a>
-                        <a href='https://www.linkedin.com/in/chak-hoi-chan-19672046/'><img id="link" src={link} alt="link" /></a>
-
-                <NavLink exact to="/profile"><img id="profile" src={pushingp} alt="profile" /></NavLink>
-                {buttonlogout}
+                    <a href="https://github.com/chakhoic"><img id="git" src={git} alt="git" /></a>
+                    <a href='https://www.linkedin.com/in/chak-hoi-chan-19672046/'><img id="link" src={link} alt="link" /></a>
+    
+                    <NavLink exact to="/profile"><img id="profile" src={pushingp} alt="profile" /></NavLink>
+                    {buttonlogout}
                 </div>
-                </div>
-            </>
-            )
-        }
+            </div>
+        </>
+    );
     }
-
+}    
 
 
 export default Navigation;

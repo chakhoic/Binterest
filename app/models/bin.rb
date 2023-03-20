@@ -14,6 +14,15 @@ class Bin < ApplicationRecord
         class_name: :User,
         foreign_key: :author_id
 
+    has_many :saves,
+    primary_key: :id,
+    foreign_key: :bin_id,
+    class_name: :Save
+
+    has_many :saved_boards,
+    through: :saves,
+    source: :board
+
   # def ensure_photo
   #   unless self.photo.attached?
   #     errors.add(:photo, "must be attached")

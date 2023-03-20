@@ -9,6 +9,7 @@ class Api::BoardsController < ApplicationController
 
     def create
         @board = Board.new(boards_params)
+        
         @board.author_id = current_user.id
 
         if @board.save

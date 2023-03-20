@@ -1,0 +1,110 @@
+/* Style for the page container */
+.bin-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+    /* height: 100%; */
+    background-size: 110% 100%;
+    height: 120vh;
+    background-color: white;
+    background-blend-mode: multiply;
+
+  }
+  
+  /* Style for the bin container */
+  .bin-container {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 1200px;
+    margin: 0 auto;
+    border-radius: 35px;
+    overflow: hidden;
+    border: 1px solid white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  /* Style for the image container */
+  .bin-image-container {
+    flex: 1;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  
+  /* Style for the image */
+  .bin-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 0;
+    margin-left: 0;
+
+  }
+
+  
+  .bin-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    width: 40%;
+  }
+  
+  .bin-form-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bin-select {
+    margin-right: 10px;
+    padding: 1px;
+    font-size: 1rem;
+    /* border-radius: 5px; */
+    align-items: center;
+    border: none;
+    outline: none;
+    font-size: large;
+  }
+  
+  .bin-submit {
+    padding: 8px 12px;
+    font-size: 1rem;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+  }
+  
+  
+  /* Style for the form container */
+  .bin-form-container {
+    flex: 1;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  #bintitle {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    float: left;
+  }
+  
+  
+  .bin-submit:hover {
+    background-color: #db3b4e;
+  }
+  

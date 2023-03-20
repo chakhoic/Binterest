@@ -7,5 +7,5 @@
 
 # json.photoUrl bin.photo.attached? ? bin.photo.url : nil
 
-json.extract! bin, :id, :title
+json.extract! bin, :id, :title, :author_id, :board_id, :body
 json.photoUrl bin.photo.attached? ? url_for(bin.photo) : nil

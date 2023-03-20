@@ -10,5 +10,15 @@ class Board < ApplicationRecord
         class_name: :User,
         foreign_key: :author_id
 
+    has_many :saves,
+    primary_key: :id,
+    foreign_key: :board_id,
+    class_name: :Save
+    
+    has_many :saved_bins,
+    through: :saves,
+    source: :bin
+
+
 
 end

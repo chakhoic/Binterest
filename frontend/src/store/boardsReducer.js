@@ -24,7 +24,7 @@ export const removeBoard = boardId => ({
 
 // THUNK ACTIONS
 export const fetchBoards = () => async (dispatch) => {
-    const res = await fetch('/api/boards');
+    const res = await csrfFetch('/api/boards');
 
     if (res.ok) {
         const boards = await res.json();
@@ -33,7 +33,7 @@ export const fetchBoards = () => async (dispatch) => {
 }
 
 export const fetchBoard = (boardId) => async (dispatch) => {
-    const res = await fetch(`/api/boards/${boardId}`);
+    const res = await csrfFetch(`/api/boards/${boardId}`);
 
     if (res.ok) {
         const board = await res.json();
@@ -42,14 +42,14 @@ export const fetchBoard = (boardId) => async (dispatch) => {
 }
 
 export const createBoard = (boardObj) => async (dispatch) => {
-    const res = await fetch(`/api/boards`, {
+    const res = await csrfFetch(`/api/boards`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(boardObj)
     });
-
+    debugger
     if (res.ok) {
         const board = await res.json();
         dispatch(receiveBoard(board));
@@ -71,7 +71,7 @@ export const deleteBoard = boardId => async dispatch => {
 }
 
 export const updateBoard = board => async (dispatch) => {
-    const res = await fetch(`/api/boards/${board.id}`, {
+    const res = await csrfFetch(`/api/boards/${board.id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'

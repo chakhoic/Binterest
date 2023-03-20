@@ -1,29 +1,41 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { fetchBins } from '../../store/binsReducer';
+import { getBins } from '../../store/binsReducer';
+import { useSelector } from 'react-redux';
 import "./water.css"
 
 
-const Feed = ({ bins }) => {
+const Feed = () => {
+
+  const dispatch = useDispatch();
+  const bins = useSelector(state => state.bins)
   const binsArray = Object.values(bins);
 
-  if (!Array.isArray(binsArray)) {
-    return <div>Loading...</div>;
-  }
+  useEffect(() => {
+    dispatch(fetchBins())
+  }, []);
+
 
   return (
-    <ul>
-      {binsArray.map(bin => {
-        return (
-          <li key={bin.id}>
-            <Link to={`/bins/${bin.id}`}>
-              <h2>{bin.title}</h2>
-              <img id="pics" src={bin.photoUrl} alt="" />
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
+    <div id="homes">
+      <ul>
+        {binsArray
+          .sort(() => Math.random() - 0.5) // shuffle the array randomly
+          .map(bin => {
+            return (
+              <li key={bin.id}>
+                <Link to={`/bins/${bin.id}`}>
+                  <img id="pics" src={bin.photoUrl} alt="" />
+                </Link>
+              </li>
+            );
+          })}
+      </ul>
+    </div>
   );
-}
+}  
 
 export default Feed;

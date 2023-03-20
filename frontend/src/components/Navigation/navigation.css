@@ -1,29 +1,31 @@
 #home {
+    margin-top: 15px;
     padding-left: 10px;
     width: 180px;
     height: 40px;
-    padding-top: -5px;
-    margin-bottom: -10px;
+    padding-top: -10px;
+    margin-right: -105px;
+    
 }
 
 #bar2 {
     background-color: white;
-    margin-top: -15px;
     margin-left: -5px;
-    padding-top: 15px;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-width: 0.5px;
+    padding: 15px;
 }
+
+  
 
 #bar {
     background-color: white;
-    margin-top: -15px;
+    margin-top: -10px;
     margin-left: -5px;
-    padding-top: 15px;
-    padding-bottom: 10px;
+    margin-bottom: -5px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,7 +37,6 @@
     margin-right: 10px;
     min-width: 60px;
     box-sizing: border-box;
-    /* display: inline-block; */
     background-color: rgba(255, 0, 0, 0.805);
     color: white;
     padding-left: 15px;
@@ -50,23 +51,20 @@
     cursor: pointer;
     line-height: normal;
     border: none;
-}
-
-#login {
     display: flex;
     justify-content: center;
 }
+
 
 #login:hover {
     background-color: lightcoral;
 }
 
 #logout {
-    float: right;
-        margin-right: 10px;
+        float: right;
         min-width: 60px;
         box-sizing: border-box;
-        display: inline-block;
+        margin-left: 10px;        
         background-color: rgba(255, 0, 0, 0.805);
         color: white;
         padding-left: 15px;
@@ -76,8 +74,6 @@
         border-radius: 25px;
         font-size: 100%;
         font-family: sans-serif;
-        /* vertical-align: middle; */
-        margin: 0px;
         cursor: pointer;
         line-height: normal;
         border: none;
@@ -89,7 +85,7 @@
 
 #signup {
     float: right;
-    margin-left: 1170px;
+
     min-width: 60px;
         box-sizing: border-box;
         display: inline-block;
@@ -112,25 +108,19 @@
     background-color: lightgrey;
 }
 
-body {
-    padding-top: 10px;
-    flex-direction: row;
-    display: flexbox;
-}
-
 #profile {
     height: 30px;
     width: 30px;
 }
 
+#homelink {
+    margin-top: -10px;
+}
+
 #dropdown {
-        margin-left: -20px;
         background-color: transparent;
         color: black;
-        padding-bottom: 8px;
-        padding-top: 8px;
-        padding-left: 12px;
-        padding-right: 12px;
+        padding: 10px;
         border-radius: 25px;
         font-size: 100%;
         font-family: sans-serif;
@@ -173,6 +163,7 @@ body {
 }
 
 #eagle {
-    height: 30px;
-    width: 30px;
+    margin-left: 1250px;
+    height: 32px;
+    width: 32px;
 }

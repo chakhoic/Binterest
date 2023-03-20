@@ -80,7 +80,7 @@ export const deleteBin = binId => async dispatch => {
 }
 
 export const updateBin = bin => async (dispatch) => {
-    const res = await fetch(`/api/bins/${bin.id}`, {
+    const res = await csrfFetch(`/api/bins/${bin.id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
@@ -112,8 +112,8 @@ const binsReducer = (state = {}, action) => {
         // case RECEIVE_BINS:
         //     return { ...state, ...action.bins };
         case RECEIVE_BINS:
-            return { ...state, ...Object.fromEntries(Object.entries(action.bins).map(([k, v]) => [k, {...v}])), allBins: Object.values(action.bins) };
-        
+            // return { ...state, ...Object.fromEntries(Object.entries(action.bins).map(([k, v]) => [k, {...v}])), allBins: Object.values(action.bins) };
+            return { ...state, ...action.bins};
         case RECEIVE_BIN:
             newState[action.bin.id] = action.bin
             return newState

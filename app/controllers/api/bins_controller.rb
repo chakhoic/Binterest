@@ -49,13 +49,12 @@ class Api::BinsController < ApplicationController
     @bin = Bin.find_by(id: params[:id])
 
     @bin.title = params[:bin][:title]
-    @bin.description = params[:bin][:description]
+    @bin.board_id = params[:bin][:board_id]
 
     if @bin.save
       redirect_to user_url(@bin.user)
     else
-      flash.now[:errors] = @bin.errors.full_messages
-      render :edit
+      render json: ["Cannot Update"]
     end
   end
 
@@ -66,6 +65,6 @@ class Api::BinsController < ApplicationController
   private
 
   def bins_params
-    params.require(:bin).permit(:title, :body, :photo, :author_id)
+    params.require(:bin).permit(:title, :body, :photo, :author_id, :board_id)
   end
 end
