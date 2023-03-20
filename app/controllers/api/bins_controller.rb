@@ -22,16 +22,6 @@ class Api::BinsController < ApplicationController
     end
   end
 
-  #     take away author_id
-  #     def create
-  #   bin = Bin.new(bins_params)
-  #   bin.author_id = current_user.id
-  #   if bin.save
-  #     render partial: "api/bins/bin", locals: { bin: bin }
-  #   else
-  #     render json: bin.errors.full_messages, status: 422
-  #   end
-  # end
 
   def destroy
     @bin = Bin.find(params[:id])

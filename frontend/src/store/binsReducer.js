@@ -33,7 +33,7 @@ export const removeBin = binId => ({
 
 // THUNK ACTIONS
 export const fetchBins = () => async (dispatch) => {
-    const res = await fetch('/api/bins');
+    const res = await csrfFetch('/api/bins');
 
     if (res.ok) {
         const bins = await res.json();
@@ -42,7 +42,7 @@ export const fetchBins = () => async (dispatch) => {
 }
 
 export const fetchBin = (binId) => async (dispatch) => {
-    const res = await fetch(`/api/bins/${binId}`);
+    const res = await csrfFetch(`/api/bins/${binId}`);
 
     if (res.ok) {
         const bin = await res.json();
@@ -51,7 +51,7 @@ export const fetchBin = (binId) => async (dispatch) => {
 }
 
 export const createBin = (binObj) => async (dispatch) => {
-    const res = await fetch(`/api/bins`, {
+    const res = await csrfFetch(`/api/bins`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

@@ -3,9 +3,9 @@ class Api::BoardsController < ApplicationController
 
     
     def index
-        @boards = current_user.boards.where(author_id: @current_user.id)
-        # @boards = Board.all
-    end
+        @boards = current_user.boards.where(author_id: current_user.id)
+      end
+      
 
     def create
         @board = Board.new(boards_params)

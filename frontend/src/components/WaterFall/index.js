@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchBins } from '../../store/binsReducer';
-import { getBins } from '../../store/binsReducer';
 import { useSelector } from 'react-redux';
 import "./water.css"
 
