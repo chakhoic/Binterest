@@ -49,7 +49,6 @@ export const createBoard = (boardObj) => async (dispatch) => {
         },
         body: JSON.stringify(boardObj)
     });
-    debugger
     if (res.ok) {
         const board = await res.json();
         dispatch(receiveBoard(board));
@@ -101,7 +100,7 @@ const boardsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_BOARDS:
-            return { ...state, ...action.boards };
+            return { ...action.boards };
         case RECEIVE_BOARD:
             newState[action.board.id] = action.board
             return newState

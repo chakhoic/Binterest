@@ -53,7 +53,6 @@ export const login = (user) => async (dispatch) => {
 // catch the error, dispatch error action to the reducer
 
 export const signup = (user) => async (dispatch) => {
-    // debugger
     const { email, password } = user;
     const response = await csrfFetch("/api/users", {
         method: "POST",
@@ -84,7 +83,6 @@ const initialState = {
   };
   
 const sessionReducer = (state = initialState, action) => {
-    // debugger
     switch (action.type) {
         case SET_CURRENT_USER:
             return { ...state, user: action.payload };

@@ -24,22 +24,30 @@ export const removeBin = binId => ({
     binId
 });
 
-// export const addBin = binObj => {
-//     return {
-//         type: ADD_BIN,
-//         binObj
-//     }
-// }
+
 
 // THUNK ACTIONS
-export const fetchBins = () => async (dispatch) => {
+export const fetchBins = (boardId = null) => async (dispatch) => {
     const res = await csrfFetch('/api/bins');
 
     if (res.ok) {
         const bins = await res.json();
-        dispatch(receiveBins(bins));
+        let filteredBins;
+        if (boardId) { 
+             filteredBins = Object.keys(bins).reduce((filtered, key) => {
+                if (bins[key].boardId === boardId) {
+                    filtered[key] = bins[key]
+                }
+                return filtered
+            }, {})
+        } else {
+             filteredBins = bins
+        }
+        
+        dispatch(receiveBins(filteredBins));
     }
 }
+
 
 export const fetchBin = (binId) => async (dispatch) => {
     const res = await csrfFetch(`/api/bins/${binId}`);
@@ -113,7 +121,7 @@ const binsReducer = (state = {}, action) => {
         //     return { ...state, ...action.bins };
         case RECEIVE_BINS:
             // return { ...state, ...Object.fromEntries(Object.entries(action.bins).map(([k, v]) => [k, {...v}])), allBins: Object.values(action.bins) };
-            return { ...state, ...action.bins};
+            return { ...action.bins};
         case RECEIVE_BIN:
             newState[action.bin.id] = action.bin
             return newState

@@ -4,17 +4,19 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
-import CreateBinForm from './components/BinFormPage';
+import BinCreatePage from './components/BinFormPage';
 import ProfilePage from './components/ProfilePage';
 import Feed from './components/WaterFall';
 import BoardPage from './components/BoardPage/BoardPage'
 import BinPage from './components/BinPage/BinPage'
-import { fetchBins } from './store/binsReducer';
 
 
 function App() {
 
   const [bins, setBins] = useState([]);
+  const [boards, setBoards] = useState([]);
+  const [newBin, setNewBin] = useState(null);
+
 
   useEffect(() => {
     const fetchBins = async () => {
@@ -24,17 +26,30 @@ function App() {
     fetchBins();
   }, []);
 
+  useEffect(() => {
+    if (newBin)
+      setBins(prevBins => [newBin, ...prevBins])
+  }, [newBin])
+
+
+  useEffect(() => {
+    const fetchBoards = async () => {
+      const res = await fetch(`/api/boards`);
+      setBoards(await res.json());
+    }
+    fetchBoards();
+  }, []);
 
   return (
     <>
       < Router >
         <Navigation />
         <Switch>
+          <Route path='/createbin'>
+            <BinCreatePage setNewBin={setNewBin}/>
+          </Route>
           <Route path='/feed'>
             <Feed />
-          </Route>
-          <Route path='/createbin'>
-            <CreateBinForm />
           </Route>
           <Route path='/createboard'>
           </Route>
@@ -42,7 +57,7 @@ function App() {
             <ProfilePage />
           </Route>
           <Route path='/boards/:boardid'>
-            <BoardPage />
+            <BoardPage bins={bins} boards={boards}/>
           </Route>
           <Route path='/bins/:binid'>
             <BinPage bins={bins}/>

@@ -1,9 +1,10 @@
 class Api::BoardsController < ApplicationController
-    before_action :require_logged_in, only: [:create, :destroy]
+    before_action :require_logged_in, only: [:create, :destroy, :index]
 
     
     def index
         @boards = current_user.boards.where(author_id: current_user.id)
+        render :index
       end
       
 

@@ -8,10 +8,10 @@ import "./water.css"
 
 
 const Feed = () => {
-
   const dispatch = useDispatch();
   const bins = useSelector(state => state.bins)
   const binsArray = Object.values(bins);
+
 
   useEffect(() => {
     dispatch(fetchBins())
@@ -29,6 +29,8 @@ const Feed = () => {
                 <Link to={`/bins/${bin.id}`}>
                   <img id="pics" src={bin.photoUrl} alt="" />
                 </Link>
+                <div id="binsuserid">{bin.author_id}</div>
+                <div id="binstitle">{bin.title}</div>
               </li>
             );
           })}

@@ -1,6 +1,6 @@
 class Api::BinsController < ApplicationController
   wrap_parameters include: Bin.attribute_names + [:photo]
-  # before_action :require_logged_in, only: [:create, :destroy, :index, :show]
+  before_action :require_logged_in, only: [:create, :destroy, :index, :show]
 
   def show
     @bin = Bin.find(params[:id])
@@ -9,8 +9,9 @@ class Api::BinsController < ApplicationController
   # aws index
   def index
     @bins = Bin.all
-    # render json: @bins
-    render "index"
+    render :index
+    # render json: bins
+
   end
 
   def create
@@ -41,8 +42,8 @@ class Api::BinsController < ApplicationController
     @bin.title = params[:bin][:title]
     @bin.board_id = params[:bin][:board_id]
 
-    if @bin.save
-      redirect_to user_url(@bin.user)
+    if @bin.update
+      render :show
     else
       render json: ["Cannot Update"]
     end

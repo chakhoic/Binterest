@@ -23,7 +23,6 @@ export const loginUser = user => async dispatch => {
     });
     let data = await res.json();
     sessionStorage.setItem('currentUser', JSON.stringify(data.user));
-    // debugger
     dispatch(receiveUser(data.user))
 };
 

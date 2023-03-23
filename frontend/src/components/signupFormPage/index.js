@@ -20,7 +20,6 @@ function SignupFormPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        debugger
         if (password === confirmPassword) {
             setErrors([]);
             return dispatch(sessionActions.signup({ email, password }))

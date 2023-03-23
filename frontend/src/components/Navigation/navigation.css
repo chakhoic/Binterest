@@ -85,7 +85,7 @@
 
 #signup {
     float: right;
-
+margin-right: -10px;
     min-width: 60px;
         box-sizing: border-box;
         display: inline-block;
