@@ -9,7 +9,7 @@ import ProfilePage from './components/ProfilePage';
 import Feed from './components/WaterFall';
 import BoardPage from './components/BoardPage/BoardPage'
 import BinPage from './components/BinPage/BinPage'
-
+import csrfFetch from './store/csrf';
 
 function App() {
 
@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     const fetchBins = async () => {
-      const res = await fetch(`/api/bins`);
+      const res = await csrfFetch(`/api/bins`);
       setBins(await res.json());
     }
     fetchBins();

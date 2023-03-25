@@ -36,18 +36,18 @@ class Api::BinsController < ApplicationController
   end
   
 
-  def update
-    @bin = Bin.find_by(id: params[:id])
+  # def update
+  #   @bin = Bin.find_by(id: params[:id])
 
-    @bin.title = params[:bin][:title]
-    @bin.board_id = params[:bin][:board_id]
+  #   @bin.title = params[:bin][:title]
+  #   @bin.board_id = params[:bin][:board_id]
 
-    if @bin.update
-      render :show
-    else
-      render json: ["Cannot Update"]
-    end
-  end
+  #   if @bin.update
+  #     render :show
+  #   else
+  #     render json: ["Cannot Update"]
+  #   end
+  # end
 
   def edit
     @bin = Bin.find(params[:id])
@@ -56,6 +56,6 @@ class Api::BinsController < ApplicationController
   private
 
   def bins_params
-    params.require(:bin).permit(:title, :body, :photo, :author_id, :board_id)
+    params.require(:bin).permit(:title, :body, :photo, :author_id, :board_id, :photo)
   end
 end

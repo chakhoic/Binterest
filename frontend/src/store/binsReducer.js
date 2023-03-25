@@ -35,7 +35,7 @@ export const fetchBins = (boardId = null) => async (dispatch) => {
         let filteredBins;
         if (boardId) { 
              filteredBins = Object.keys(bins).reduce((filtered, key) => {
-                if (bins[key].boardId === boardId) {
+                if (bins[key].savedBoards.some(el => el.id === boardId)) {
                     filtered[key] = bins[key]
                 }
                 return filtered
@@ -70,6 +70,7 @@ export const createBin = (binObj) => async (dispatch) => {
     if (res.ok) {
         const bin = await res.json();
         dispatch(receiveBin(bin));
+        dispatch(fetchBins())
     }
 }
 
@@ -87,20 +88,20 @@ export const deleteBin = binId => async dispatch => {
     }
 }
 
-export const updateBin = bin => async (dispatch) => {
-    const res = await csrfFetch(`/api/bins/${bin.id}`, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(bin)
-    });
+// export const updateBin = bin => async (dispatch) => {
+//     const res = await csrfFetch(`/api/bins/${bin.id}`, {
+//         method: 'PATCH',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(bin)
+//     });
 
-    if (res.ok) {
-        const bin = await res.json();
-        dispatch(receiveBin(bin));
-    }
-}
+//     if (res.ok) {
+//         const bin = await res.json();
+//         dispatch(receiveBin(bin));
+//     }
+// }
 
 // SELECTORS
 export const getBin = binId => state => {

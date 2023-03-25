@@ -22,10 +22,10 @@
     password: 'password'
   )
 
-  # User.create!(
-  #   email: 'user3@user.io', 
-  #   password: 'password'
-  # )
+  User.create!(
+    email: 'user3@user.io', 
+    password: 'password'
+  )
 
 
   Board.create!(
@@ -43,12 +43,14 @@
     author_id: 2
   )
 
-  # Board.create!(
-  #   title: 'user3',
-  #   author_id: 3
-  # )
+  Board.create!(
+    title: 'user3',
+    author_id: 3
+  )
 
   puts "Creating bins..."
+
+  # demouser bins
   
   b1 = Bin.create!(
     title: 'gato',
@@ -81,146 +83,68 @@
   b3.url = b3.photo.url # set the url attribute
   b3.save!
 
+  b13 = Bin.create!(
+    title: 'gas',
+    author_id: 1,
+    board_id: 1,
+    body: 'liu',
+  )
+
+  pic_b13 = URI.open("https://binz1-seeds.s3.amazonaws.com/gas.jpeg")
+  b13.photo.attach(io: pic_b13, filename:"b13")
+  b13.save!
+
+  b14 = Bin.create!(
+    title: 'kfc',
+    author_id: 1,
+    board_id: 1,
+    body: 'liu',
+  )
+  pic_b14 = URI.open("https://binz1-seeds.s3.amazonaws.com/kfc.jpeg")
+  b14.photo.attach(io: pic_b14, filename:"b14")
+  b14.save!
+
+  b15 = Bin.create!(
+    title: 'ny',
+    author_id: 1,
+    board_id: 1,
+    body: 'liu',
+  )
+  pic_b15 = URI.open("https://binz1-seeds.s3.amazonaws.com/ny.jpeg")
+  b15.photo.attach(io: pic_b15, filename:"b15")
+  b15.save!
+
+  b16 = Bin.create!(
+    title: 'nyc',
+    author_id: 1,
+    board_id: 1,
+    body: 'liu',
+  )
+  pic_b16 = URI.open("https://binz1-seeds.s3.amazonaws.com/nyc.jpeg")
+  b16.photo.attach(io: pic_b16, filename:"b16")
+  b16.save!
+
+  b17 = Bin.create!(
+    title: 'nyy',
+    author_id: 1,
+    board_id: 1,
+    body: 'liu',
+  )
+  pic_b17 = URI.open("https://binz1-seeds.s3.amazonaws.com/nyy.jpeg")
+  b17.photo.attach(io: pic_b17, filename:"b17")
+  b17.save!
+
+  # user2 bins
+
   b4 = Bin.create!(
     title: 'USER2',
     author_id: 2,
     board_id: 3,
     body: 'liu',
   )
-  pic_b1 = URI.open("https://binz1-seeds.s3.amazonaws.com/Cat03.jpeg")
+  pic_b1 = URI.open("https://binz1-seeds.s3.amazonaws.com/appp.jpg")
   b4.photo.attach(io: pic_b1, filename:"b1")
   b4.save!
-
-  # b5 = Bin.create!(
-  #   title: 'b5',
-  #   author_id: 1,
-  #   board_id: 1,
-  #   body: 'liu',
-  # )
-  # pic_b1 = URI.open("https://binz1-seeds.s3.amazonaws.com/Cat03.jpeg")
-  # b5.photo.attach(io: pic_b1, filename:"b1")
-  # b5.save!
-
-  # b6 = Bin.create!(
-  #   title: 'b6',
-  #   author_id: 1,
-  #   board_id: 1,
-  #   body: 'liu',
-  # )
-  # pic_b1 = URI.open("https://binz1-seeds.s3.amazonaws.com/Cat03.jpeg")
-  # b6.photo.attach(io: pic_b1, filename:"b1")
-  # b6.save!
-
-  # b7 = Bin.create!(
-  #   title: 'b7',
-  #   author_id: 1,
-  #   board_id: 1,
-  #   body: 'liu',
-  # )
-  # pic_b1 = URI.open("https://binz1-seeds.s3.amazonaws.com/Cat03.jpeg")
-  # b7.photo.attach(io: pic_b1, filename:"b1")
-  # b7.save!
-
-  # b8 = Bin.create!(
-  #   title: 'b8',
-  #   author_id: 1,
-  #   board_id: 1,
-  #   body: 'liu',
-  # )
-  # pic_b1 = URI.open("https://binz1-seeds.s3.amazonaws.com/Cat03.jpeg")
-  # b8.photo.attach(io: pic_b1, filename:"b1")
-  # b8.save!
-
-  # b9 = Bin.create!(
-  #   title: 'b9',
-  #   author_id: 1,
-  #   board_id: 1,
-  #   body: 'liu',
-  # )
-  # pic_b1 = URI.open("https://binz1-seeds.s3.amazonaws.com/Cat03.jpeg")
-  # b9.photo.attach(io: pic_b1, filename:"b1")
-  # b9.save!
-
-  # b10 = Bin.create!(
-  #   title: 'b10',
-  #   author_id: 1,
-  #   board_id: 1,
-  #   body: 'liu',
-  # )
-  # pic_b1 = URI.open("https://binz1-seeds.s3.amazonaws.com/Cat03.jpeg")
-  # b10.photo.attach(io: pic_b1, filename:"b1")
-  # b10.save!
-
-  # b11 = Bin.create!(
-  #   title: 'b11',
-  #   author_id: 1,
-  #   board_id: 1,
-  #   body: 'liu',
-  # )
-  # pic_b1 = URI.open("https://binz1-seeds.s3.amazonaws.com/Cat03.jpeg")
-  # b11.photo.attach(io: pic_b1, filename:"b1")
-  # b11.save!
-
-  # b12 = Bin.create!(
-  #   title: 'b12',
-  #   author_id: 1,
-  #   board_id: 1,
-  #   body: 'liu',
-  # )
-  # pic_b1 = URI.open("https://binz1-seeds.s3.amazonaws.com/Cat03.jpeg")
-  # b12.photo.attach(io: pic_b1, filename:"b1")
-  # b12.save!
-
-  # b13 = Bin.create!(
-  #   title: 'gas',
-  #   author_id: 1,
-  #   board_id: 1,
-  #   body: 'liu',
-  # )
-
-  # pic_b13 = URI.open("https://binz1-seeds.s3.amazonaws.com/gas.jpeg")
-  # b13.photo.attach(io: pic_b13, filename:"b13")
-  # b13.save!
-
-  # b14 = Bin.create!(
-  #   title: 'kfc',
-  #   author_id: 1,
-  #   board_id: 1,
-  #   body: 'liu',
-  # )
-  # pic_b14 = URI.open("https://binz1-seeds.s3.amazonaws.com/kfc.jpeg")
-  # b14.photo.attach(io: pic_b14, filename:"b14")
-  # b14.save!
-
-  # b15 = Bin.create!(
-  #   title: 'ny',
-  #   author_id: 1,
-  #   board_id: 1,
-  #   body: 'liu',
-  # )
-  # pic_b15 = URI.open("https://binz1-seeds.s3.amazonaws.com/ny.jpeg")
-  # b15.photo.attach(io: pic_b15, filename:"b15")
-  # b15.save!
-
-  # b16 = Bin.create!(
-  #   title: 'nyc',
-  #   author_id: 1,
-  #   board_id: 1,
-  #   body: 'liu',
-  # )
-  # pic_b16 = URI.open("https://binz1-seeds.s3.amazonaws.com/nyc.jpeg")
-  # b16.photo.attach(io: pic_b16, filename:"b16")
-  # b16.save!
-
-  # b17 = Bin.create!(
-  #   title: 'nyy',
-  #   author_id: 1,
-  #   board_id: 1,
-  #   body: 'liu',
-  # )
-  # pic_b17 = URI.open("https://binz1-seeds.s3.amazonaws.com/nyy.jpeg")
-  # b17.photo.attach(io: pic_b17, filename:"b17")
-  # b17.save!
 
 
 

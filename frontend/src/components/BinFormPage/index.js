@@ -1,19 +1,47 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import csrfFetch from '../../store/csrf';
+import { fetchBoards } from '../../store/boardsReducer';
+import { createBin } from '../../store/binsReducer'
+
 
 
 function BinCreatePage ({ setNewBin }) {
-const history = useHistory();
+    const dispatch = useDispatch();
+    const history = useHistory();
   const [title, setTitle] = useState ("");
+  const [body, setBody] = useState ("");
+  const boards = useSelector(state => Object.values(state.boards))
+
+  // select a board id 
+  const [boardId, setBoardId] = useState ("");
+
   const [photoFile, setPhotoFile] = useState (null);
   const [photoUrl, setPhotoUrl] = useState (null);
-  const [imageFiles, setImageFiles] = useState ([]);
+  // select a author id
+  const sessionUser = useSelector((state) => state.session.user)
+//   const user = useSelector((state) => state.session.user.id)
+//   const [authorId, setAuthorId] = useState(sessionUser && sessionUser.id)
+
   const [imageUrls, setImageUrls] = useState ([]);
   const fileRef = useRef(null);
 
+  useEffect(() => {
+    dispatch(fetchBoards())
+  }, []);
+
   const handleInput = e => {
     setTitle(e.currentTarget.value);
+
   }
+
+  const handleInput2 = e => {
+    setBody(e.currentTarget.value);
+  }
+
+  const options = boards ? boards.map(board => <option key={board.id} value={board.id}>{board.title}</option>) : []
+
 
   const handleFile = ({ currentTarget }) => {
     const file = currentTarget.files[0];
@@ -27,34 +55,20 @@ const history = useHistory();
   }
   
 
-  const handleSubmit = async e => {
+  const handleSubmit = e => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('bin[title]', title);
-    if (photoFile) {
-      formData.append('bin[photo]', photoFile);
-    }
-    else if (imageFiles.length !== 0) {
-      Array.from(imageFiles).forEach(image => {
-        formData.append('bin[images][]', image);
-      })
+    const formData = {
+      title: title, 
+      body: body,
+      author_id: sessionUser.id,
+      board_id: boardId
     }
 
-    const response = await fetch('/api/bins', {
-      method: 'bin',
-      body: formData
-    });
-    if (response.ok) {
-      const bin = await response.json();
-      setTitle("");
-      setPhotoFile(null);
-      setPhotoUrl(null);
-      setImageFiles([]);
-      setImageUrls([]);
-      setNewBin(bin);
-      fileRef.current.value = null;
-      history.push('/feed');
+    if (photoFile) {
+      formData.photo = photoFile
     }
+    dispatch(createBin(formData));
+    history.push("/feed")
   }
 
   let preview = null;
@@ -73,6 +87,16 @@ const history = useHistory();
         value={title}
         onChange={handleInput}
         required />
+     <label htmlFor="bin-body">Desription</label>
+        <input type="text"
+        id="bin-body"
+        value={body}
+        onChange={handleInput2}
+        required />
+    <select className="bin-select" value={boardId} onChange={(e) => setBoardId(e.target.value)}>
+                <option disabled value="">select a board</option>
+                {options}
+    </select>
       <input type="file" ref={fileRef} onChange={handleFile} />
       <h3>Image preview</h3>
       {preview}

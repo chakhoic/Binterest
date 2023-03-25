@@ -1,20 +1,18 @@
-
- export const saveBin = (binId) => {
-    return {
-      type: "SAVE_BIN",
-      payload: {
-        binId
-      }
-    }
-  }
-  
- export const removeBin = (binId) => {
-    return {
-      type: "REMOVE_BIN",
-      payload: {
-        binId
-      }
-    }
+import csrfAPIFetch from "./csrf"
+import csrfFetch from "./csrf"
+  export const createSave = (save) => async dispatch => {
+    const response = await csrfFetch('/api/saves', {
+      method: "POST",
+      headers: {
+        "Content-Type": 'application/json'
+      },
+      body: JSON.stringify(save)
+    })
+    return response
+    // csrfAPIFetch('/api/saves', {
+    //   method: "POST",
+    //   data: { save }
+    // })
   }
   
 
