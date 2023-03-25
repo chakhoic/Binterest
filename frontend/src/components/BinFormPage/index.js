@@ -13,18 +13,10 @@ function BinCreatePage ({ setNewBin }) {
   const [title, setTitle] = useState ("");
   const [body, setBody] = useState ("");
   const boards = useSelector(state => Object.values(state.boards))
-
-  // select a board id 
   const [boardId, setBoardId] = useState ("");
-
   const [photoFile, setPhotoFile] = useState (null);
   const [photoUrl, setPhotoUrl] = useState (null);
-  // select a author id
   const sessionUser = useSelector((state) => state.session.user)
-//   const user = useSelector((state) => state.session.user.id)
-//   const [authorId, setAuthorId] = useState(sessionUser && sessionUser.id)
-
-  const [imageUrls, setImageUrls] = useState ([]);
   const fileRef = useRef(null);
 
   useEffect(() => {
@@ -54,30 +46,57 @@ function BinCreatePage ({ setNewBin }) {
     else setPhotoUrl(null);
   }
   
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   const formData = {
+  //     title: title, 
+  //     body: body,
+  //     author_id: sessionUser.id,
+  //     board_id: boardId
+  //   }
 
-  const handleSubmit = e => {
+  //   if (photoFile) {
+  //     formData.photo = photoFile
+  //   }
+  //   dispatch(createBin(formData));
+  //   history.push("/feed")
+  // }
+
+  const handleSubmit = async e => {
     e.preventDefault();
-    const formData = {
-      title: title, 
-      body: body,
-      author_id: sessionUser.id,
-      board_id: boardId
-    }
-
+  
+    const formData = new FormData();
+    formData.append('bin[title]', title);
+    formData.append('bin[body]', body);
+    formData.append('bin[author_id]', sessionUser.id);
+    formData.append('bin[board_id]', boardId);
+  
     if (photoFile) {
-      formData.photo = photoFile
+      formData.append('bin[photo]', photoFile);
     }
-    dispatch(createBin(formData));
-    history.push("/feed")
-  }
 
-  let preview = null;
-  if (photoUrl) preview = <img src={photoUrl} alt="" />;
-  else if (imageUrls.length !== 0) {
-    preview = imageUrls.map(url => {
-      return <img key={url} src={url} alt="" />;
-    })
+    const response = await csrfFetch('/api/bins', {
+      method: 'POST',
+      body: formData
+    });
+    if (response.ok) {
+      const bin = await response.json();
+      setTitle("");
+      setBoardId("");
+      setPhotoFile(null);
+      setPhotoUrl(null);
+      setNewBin(bin);
+      fileRef.current.value = null;
+      history.push("/feed");
+    }
   }
+  
+  
+
+  
+
+  // let preview = null;
+  // if (photoUrl) preview = <img src={photoUrl} alt="" />;
 
   return (
     <form onSubmit={handleSubmit}>
@@ -98,8 +117,8 @@ function BinCreatePage ({ setNewBin }) {
                 {options}
     </select>
       <input type="file" ref={fileRef} onChange={handleFile} />
-      <h3>Image preview</h3>
-      {preview}
+      {/* <h3>Image preview</h3>
+      {preview} */}
       <button>Make a new bin!</button>
     </form>
   );

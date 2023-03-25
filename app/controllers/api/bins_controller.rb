@@ -8,7 +8,7 @@ class Api::BinsController < ApplicationController
 
   # aws index
   def index
-    @bins = Bin.all
+    @bins = Bin.all.sort { |a,b| b.created_at <=> a.created_at }
     render :index
     # render json: bins
 
@@ -56,6 +56,6 @@ class Api::BinsController < ApplicationController
   private
 
   def bins_params
-    params.require(:bin).permit(:title, :body, :photo, :author_id, :board_id, :photo)
+    params.require(:bin).permit(:title, :body, :photo, :author_id, :board_id)
   end
 end

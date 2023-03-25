@@ -5,9 +5,8 @@
   end
 end
 
-# @bins.each do |bin|
+# json.array! @bins do |bin|
 #   json.set! bin.id do
-#       json.extract! image, :id, :title, :author_id
-#       json.photoUrl image.photo.url
+#   json.partial! 'api/posts/bin', post: bin
 #   end
 # end
