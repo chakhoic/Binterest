@@ -11,7 +11,7 @@ const BinPage = () => {
     const dispatch = useDispatch();
     const bins = useSelector(state => state.bins)
     const boards = useSelector(state => Object.values(state.boards))
-    const [selectedBoard, setSelectedBoard] = useState(boards ? boards[0].id : null)
+    const [selectedBoard, setSelectedBoard] = useState(boards && boards.length > 0 ? boards[0].id : null)
     const history = useHistory();
   
     useEffect(() => {
@@ -38,7 +38,6 @@ const BinPage = () => {
         history.push(`/boards/${selectedBoard}`); // Navigate to the board page
       }
     }
-    
   
     
   

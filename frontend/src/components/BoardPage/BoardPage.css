@@ -1,0 +1,47 @@
+#boardz {
+  justify-content: center;
+  display: flex;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+#boardpage {
+    background-color: white;
+    background-size: 110% 100%;
+    min-height: 120vh;
+  }
+  
+  #boardpage ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  #boardpage li {
+    flex: 0 0 calc(20% - 60px);
+    margin: 15px;
+    border-radius: 20px;
+    height: 100%;
+  }
+  
+  #boardpage li:hover {
+    filter: brightness(60%);
+  }
+  
+  
+  #boardpage img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+    border-radius: 16px;
+  }
+
+  #boardpage {
+    font-family: sans-serif;
+    font-weight: 600;
+  }
+  

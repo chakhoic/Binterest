@@ -11,7 +11,7 @@
 #bar2 {
     background-color: white;
     margin-left: -5px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -109,6 +109,7 @@ margin-right: -10px;
 }
 
 #profile {
+    margin-left: 5px;
     height: 30px;
     width: 30px;
 }
@@ -143,7 +144,6 @@ margin-right: -10px;
         justify-content: center;
         background-color: #f2f2f2;
         border-color: #f2f2f2;
-        border-width: 3px;
         border-style: hidden;
         padding: 15px;
         border-radius: 100px;
@@ -153,11 +153,13 @@ margin-right: -10px;
 }
 
 #link {
+    margin-left: 5px;
     height: 30px;
     width: 30px;
 }
 
 #git {
+margin-top: 5px;
     height: 30px;
     width: 30px;
 }

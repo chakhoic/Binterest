@@ -31,13 +31,12 @@ const BoardPage = () => {
   })
                    
 
-
-
   return (
     <div id="yerr">
       <div id="boardz">
         {theboard}
       </div>
+      <div id="boardpage">
       <ul>
         {binsArray
           .sort(() => Math.random() - 0.5)
@@ -52,6 +51,7 @@ const BoardPage = () => {
             );
           })}
       </ul>
+      </div>
     </div>
   );
 };

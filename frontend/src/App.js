@@ -26,10 +26,10 @@ function App() {
     fetchBins();
   }, []);
 
-  useEffect(() => {
-    if (newBin)
-      setBins(prevBins => [newBin, ...prevBins])
-  }, [newBin])
+  // useEffect(() => {
+  //   if (newBin)
+  //     setBins(prevBins => [newBin, ...prevBins])
+  // }, [newBin])
 
 
   useEffect(() => {

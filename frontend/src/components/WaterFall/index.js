@@ -29,7 +29,7 @@ const Feed = () => {
                 <Link to={`/bins/${bin.id}`}>
                   <img id="pics" src={bin.photoUrl} alt="" />
                 </Link>
-                <div id="binsuserid">{bin.author_id}</div>
+                <div id="binsuserid">{bin.authorId}</div>
                 <div id="binstitle">{bin.title}</div>
               </li>
             );

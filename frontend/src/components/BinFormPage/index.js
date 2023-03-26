@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import csrfFetch from '../../store/csrf';
 import { fetchBoards } from '../../store/boardsReducer';
-import { createBin } from '../../store/binsReducer'
-
+import './binForm.css'
 
 
 function BinCreatePage ({ setNewBin }) {
@@ -46,21 +45,6 @@ function BinCreatePage ({ setNewBin }) {
     else setPhotoUrl(null);
   }
   
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   const formData = {
-  //     title: title, 
-  //     body: body,
-  //     author_id: sessionUser.id,
-  //     board_id: boardId
-  //   }
-
-  //   if (photoFile) {
-  //     formData.photo = photoFile
-  //   }
-  //   dispatch(createBin(formData));
-  //   history.push("/feed")
-  // }
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -87,26 +71,32 @@ function BinCreatePage ({ setNewBin }) {
       setPhotoUrl(null);
       setNewBin(bin);
       fileRef.current.value = null;
-      history.push("/feed");
     }
-  }
-  
-  
+    history.push("/feed");
 
-  
+  }
 
   // let preview = null;
   // if (photoUrl) preview = <img src={photoUrl} alt="" />;
 
   return (
+    <div id="binback">
+      <br></br>
+      <br></br>
+
+      <br></br>
+
+      <br></br>
+
+    <div className="form-container">
     <form onSubmit={handleSubmit}>
-      <label htmlFor="bin-title">Title of bin</label>
+      <label htmlFor="bin-title">Add your title</label>
       <input type="text"
         id="bin-title"
         value={title}
         onChange={handleInput}
         required />
-     <label htmlFor="bin-body">Desription</label>
+     <label htmlFor="bin-body">Tell everyone what your Bin is about </label>
         <input type="text"
         id="bin-body"
         value={body}
@@ -121,6 +111,8 @@ function BinCreatePage ({ setNewBin }) {
       {preview} */}
       <button>Make a new bin!</button>
     </form>
+    </div>
+    </div>
   );
 }
 

@@ -1,52 +1,61 @@
 #binback {
-    width: 100%;
-    background-image: url("../../images/marble.jpeg");
-    background-size: 100% 100%;
-    /* background-color: red; */
-    background-blend-mode: multiply;
-    background-repeat: no-repeat;
-    /* padding-bottom: 500px; */
+  background-image: url("../../images/marble.jpeg");
+  background-color: #f5f5f5;
+  background-size: cover;
+  min-height: 100vh;
 }
 
-#binform {
-        align-items: center;
+.form-container {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-#fakeh1 {
-    font-family: sans-serif;
-    color: transparent;
+.form-container label {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-#fakeh12 {
-    font-family: sans-serif;
-    padding: 10px;
-    color: transparent;
-    margin-top: 120px;
+.form-container input[type="text"], select {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
-#box3 {
-    border: 10px;
-    /* height: fit-content; */
-    border-radius: 3%;
-    width: 750px;
-    padding: 5%;
-    margin: auto;
-    background-color: white;
-    margin-top: 15px;
-    height: 600px;
-    align-items: center;
-    /* border: 0.5px solid; */
-    /* padding: 10px; */
-    box-shadow: 10px 15px 8px #888888;
+.form-container input[type="file"] {
+  appearance: none;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
 }
 
-img {
-    height: 100px;
-    margin: 5px
+.form-container button {
+  background-color: #e60023;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease-in-out;
 }
 
-#add {
-    font-family: sans-serif;
-    font-size: 30px;
-    color: rgba(128, 128, 128, 0.778);
+.form-container button:hover {
+  background-color: #d5001a;
 }

@@ -1,4 +1,3 @@
-import csrfAPIFetch from "./csrf"
 import csrfFetch from "./csrf"
   export const createSave = (save) => async dispatch => {
     const response = await csrfFetch('/api/saves', {
