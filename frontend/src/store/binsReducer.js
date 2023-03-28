@@ -28,6 +28,7 @@ export const removeBin = binId => ({
 
 // THUNK ACTIONS
 export const fetchBins = (boardId = null) => async (dispatch) => {
+
     const res = await csrfFetch('/api/bins');
 
     if (res.ok) {
@@ -47,6 +48,29 @@ export const fetchBins = (boardId = null) => async (dispatch) => {
         dispatch(receiveBins(filteredBins));
     }
 }
+// export const fetchBins = (boardId = null) => async (dispatch) => {
+//     const res = await csrfFetch('/api/bins');
+  
+//     if (res.ok) {
+//       const bins = await res.json();
+//       let filteredBins;
+//       if (boardId) {
+//         const boardIdInt = parseInt(boardId); // Convert boardId to an integer
+//         filteredBins = Object.keys(bins).reduce((filtered, key) => {
+//           if (bins[key].savedBoards.some(el => el.boardId === boardIdInt)) {
+//             // Compare el.boardId instead of el.id
+//             filtered[key] = bins[key];
+//           }
+//           return filtered;
+//         }, {});
+//       } else {
+//         filteredBins = bins;
+//       }
+  
+//       dispatch(receiveBins(filteredBins));
+//     }
+//   };
+  
 
 
 export const fetchBin = (binId) => async (dispatch) => {
@@ -88,20 +112,20 @@ export const deleteBin = binId => async dispatch => {
     }
 }
 
-// export const updateBin = bin => async (dispatch) => {
-//     const res = await csrfFetch(`/api/bins/${bin.id}`, {
-//         method: 'PATCH',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(bin)
-//     });
+export const updateBin = bin => async (dispatch) => {
+    const res = await csrfFetch(`/api/bins/${bin.id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(bin)
+    });
 
-//     if (res.ok) {
-//         const bin = await res.json();
-//         dispatch(receiveBin(bin));
-//     }
-// }
+    if (res.ok) {
+        const bin = await res.json();
+        dispatch(receiveBin(bin));
+    }
+}
 
 // SELECTORS
 export const getBin = binId => state => {

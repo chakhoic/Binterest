@@ -33,6 +33,7 @@ const BoardPage = () => {
 
   return (
     <div id="yerr">
+      <br></br>
       <div id="boardz">
         {theboard}
       </div>

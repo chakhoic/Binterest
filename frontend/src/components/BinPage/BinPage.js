@@ -50,6 +50,7 @@ const BinPage = () => {
           <div className="bin-form-container">
             <form onSubmit={handleSubmit} onChange={(e) => setSelectedBoard(e.target.value)} className="bin-form">
               <div className="bin-form-row">
+                <select classname="editdropdown">...</select>
                 <select className="bin-select">
                   {options}
                 </select>

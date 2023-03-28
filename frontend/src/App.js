@@ -10,6 +10,7 @@ import Feed from './components/WaterFall';
 import BoardPage from './components/BoardPage/BoardPage'
 import BinPage from './components/BinPage/BinPage'
 import csrfFetch from './store/csrf';
+import BinEditPage from './components/BinEditPage/BinEditPage';
 
 function App() {
 
@@ -48,6 +49,9 @@ function App() {
           <Route path='/createbin'>
             <BinCreatePage setNewBin={setNewBin}/>
           </Route>
+          {/* <Route path='/edit'>
+            <BinEditPage />
+          </Route> */}
           <Route path='/feed'>
             <Feed />
           </Route>
