@@ -27,11 +27,6 @@ function App() {
     fetchBins();
   }, []);
 
-  // useEffect(() => {
-  //   if (newBin)
-  //     setBins(prevBins => [newBin, ...prevBins])
-  // }, [newBin])
-
 
   useEffect(() => {
     const fetchBoards = async () => {
@@ -49,9 +44,9 @@ function App() {
           <Route path='/createbin'>
             <BinCreatePage setNewBin={setNewBin}/>
           </Route>
-          {/* <Route path='/edit'>
+          <Route path='/edit'>
             <BinEditPage />
-          </Route> */}
+          </Route>
           <Route path='/feed'>
             <Feed />
           </Route>
