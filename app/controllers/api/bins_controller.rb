@@ -46,7 +46,7 @@ class Api::BinsController < ApplicationController
         render json: @bin.errors.full_messages
       end
     else
-      render json: ["You are not authorized to update this bin"], status: 403 # Return a 403 Forbidden status if the current user is not the author of the bin
+      render json: { error: "You are not authorized to update this bin" }, status: 403 # Return a 403 Forbidden status if the current user is not the author of the bin
     end
   end
   
