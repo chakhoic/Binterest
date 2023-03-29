@@ -16,6 +16,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px;
+    position: relative; 
 }
 
   
@@ -150,6 +151,7 @@ margin-right: -10px;
         width: 900px;
         font-family: sans-serif;
         font-size: 15px;
+        position: relative;
 }
 
 #link {
@@ -169,3 +171,48 @@ margin-top: 5px;
     height: 32px;
     width: 32px;
 }
+
+.dropdown {
+    display: inline-block;
+    position: absolute; 
+    top: 100%; 
+}
+
+#search-container {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .dropdown .bin-list {
+    position: absolute;
+    margin-top: -17px;
+    left: 0;
+    width: 900px;
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 6px;
+    z-index: 1;
+  }
+
+.dropdown .bin-list .bin-card {
+    display: block;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 5px;
+}
+
+.bin-card a {
+    text-decoration: none;
+  }
+
+#bincardtitle {
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.dropdown .bin-list .bin-card:hover {
+    background-color: #f5f5f5;
+}
+

@@ -8,12 +8,14 @@ import pushingp from "../../images/pushp.png"
 import link from "../../images/link.png"
 import git from "../../images/git.png"
 import eagle from "../../images/eagle.png"
+import { useState } from 'react';
 
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user);
-
     const history = useHistory()
+    const [searchTerm, setSearchTerm] = useState('');
+    const binList = useSelector(state => Object.values(state.bins).filter(bin => bin.title.toLowerCase().includes(searchTerm.toLowerCase())));
 
     const loginButton = () => {
         history.push("/login")
@@ -40,6 +42,11 @@ function Navigation() {
     const buttonlogin = sessionUser ? null : <button id="login" onClick={loginButton}>Log In</button>
     const buttoncreate = sessionUser ? <button id="dropdown" onClick={createButton}> Create Bin ⬇ </button> : null
 
+    const handleSearch = (e) => {
+        setSearchTerm(e.target.value);
+    };
+
+
     if (!sessionUser) {
     return (
         <>
@@ -60,20 +67,46 @@ function Navigation() {
                     <NavLink exact to="/feed"><img id="home" src={home} alt="home" /></NavLink>
                 </div>
                 {buttoncreate}
+                 <div id="search-container">
+                    <label>
+                        <input
+                        id="search"
+                        type="search"
+                        placeholder="🔍  Search"
+                        name="search"
+                        value={searchTerm}
+                        onChange={handleSearch}
+                        />
+                    </label>
+                    {searchTerm !== '' && (
+                        <div className="dropdown">
+                        <div className="bin-list">
+                            {binList.map(bin => (
+                            <div key={bin.id} className="bin-card">
+                                <br></br>
+                                <br></br>
 
-                <label>
-                    <input id="search" type="search" placeholder="🔍 Search bar is under maintenance..." name="search"></input>
-                </label>
+                                <NavLink to={`/bins/${bin.id}`}>
+                                <h2 id="bincardtitle">🔍 {bin.title}</h2>
+                                </NavLink>
+                            </div>
+                            ))}
+                        </div>
+                        </div>
+                    )}
+                    </div>
+
                 <div>
                     <a href="https://github.com/chakhoic"><img id="git" src={git} alt="git" /></a>
                     <a href='https://www.linkedin.com/in/chak-hoi-chan-19672046/'><img id="link" src={link} alt="link" /></a>
-    
                     <NavLink exact to="/profile"><img id="profile" src={pushingp} alt="profile" /></NavLink>
                     {buttonlogout}
                 </div>
             </div>
         </>
     );
+    
+    
     }
 }    
 
