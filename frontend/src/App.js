@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import LoginFormPage from './components/LoginFormPage';
-import SignupFormPage from "./components/SignupFormPage";
+import LoginFormPage from './components/loginFormPage/LoginFormPage';
+import SignupFormPage from "./components/signupFormPage/SignupFormPage";
 import Navigation from "./components/Navigation";
 import BinCreatePage from './components/BinFormPage';
 import ProfilePage from './components/ProfilePage';
@@ -44,7 +44,7 @@ function App() {
           <Route path='/createbin'>
             <BinCreatePage setNewBin={setNewBin}/>
           </Route>
-          <Route path='/edit'>
+          <Route path='/bins/:binid/edit'>
             <BinEditPage />
           </Route>
           <Route path='/feed'>

@@ -44,7 +44,6 @@ function BinCreatePage ({ setNewBin }) {
     }
     else setPhotoUrl(null);
   }
-  
 
   const handleSubmit = async e => {
     e.preventDefault();

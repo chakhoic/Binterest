@@ -32,7 +32,6 @@ const BinPage = () => {
         bin_id: parseInt(id.binid),
         board_id: parseInt(selectedBoard)
       }
-      // dispatch(updateBin(updatedBin));
       dispatch(createSave(updatedBin)); // Save bin to the "Saved Bins" section
       if (selectedBoard) {
         history.push(`/boards/${selectedBoard}`); // Navigate to the board page
@@ -50,7 +49,15 @@ const BinPage = () => {
           <div className="bin-form-container">
             <form onSubmit={handleSubmit} onChange={(e) => setSelectedBoard(e.target.value)} className="bin-form">
               <div className="bin-form-row">
-                <select classname="editdropdown">...</select>
+              <select className="editdropdown" onChange={(e) => {
+                    if (e.target.value === "edit") {
+                      history.push(`/bins/${id.binid}/edit`);
+                    }
+                  }}>
+                    <option value="placeholder">...</option>
+                    <option value="edit">Edit</option>
+                  </select>
+
                 <select className="bin-select">
                   {options}
                 </select>
@@ -69,6 +76,7 @@ const BinPage = () => {
               <div className="bin-title-container" style={{clear: 'both'}}>
                 <h2 id="bintitle">{bin ? bin.title : ""}</h2>
               </div>
+              <br></br>
               <div className="bin-body-container" style={{clear: 'both'}}>
                 <p>{bin ? bin.body : ""}</p>
               </div>
