@@ -49,15 +49,16 @@ const BinPage = () => {
           <div className="bin-form-container">
             <form onSubmit={handleSubmit} onChange={(e) => setSelectedBoard(e.target.value)} className="bin-form">
               <div className="bin-form-row">
+                <div className="edit-wrapper">
               <select className="editdropdown" onChange={(e) => {
                     if (e.target.value === "edit") {
                       history.push(`/bins/${id.binid}/edit`);
                     }
                   }}>
-                    <option value="placeholder">...</option>
+                    <option value="placeholder">. . .</option>
                     <option value="edit">Edit</option>
                   </select>
-
+                  </div>
                 <select className="bin-select">
                   {options}
                 </select>
@@ -68,17 +69,23 @@ const BinPage = () => {
             <br></br>
             <div className="bininfo">
             <br></br>
-            <div className="bin-author-container" style={{clear: 'both'}}>
+            {/* <div className="bin-author-container" style={{clear: 'both'}}>
                 <p>Uploaded by: {bin && bin.author ? bin.author.email : ""}</p>
-              </div>
+              </div> */}
               <br></br>
               <br></br>
-              <div className="bin-title-container" style={{clear: 'both'}}>
+              <div className="bin-title-container">
                 <h2 id="bintitle">{bin ? bin.title : ""}</h2>
               </div>
               <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+
+              <hr></hr>
+              <br></br>
               <div className="bin-body-container" style={{clear: 'both'}}>
-                <p>{bin ? bin.body : ""}</p>
+              <h2 id="binbody">{bin ? bin.body : ""}</h2>
               </div>
               <br></br>
 

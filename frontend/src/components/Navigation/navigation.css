@@ -86,7 +86,7 @@
 
 #signup {
     float: right;
-margin-right: -10px;
+margin-right: -265px;
     min-width: 60px;
         box-sizing: border-box;
         display: inline-block;
@@ -167,7 +167,8 @@ margin-top: 5px;
 }
 
 #eagle {
-    margin-left: 1250px;
+    margin-left: 1000px;
+    margin-right: -260px;
     height: 32px;
     width: 32px;
 }

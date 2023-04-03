@@ -53,15 +53,18 @@
   .bin-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: flex-start; /* Updated value */
+
     float: right;
     width: 40%;
   }
+
+  
   
   .bin-form-row {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Updated value */
     align-items: center;
   }
   
@@ -75,7 +78,27 @@
     outline: none;
     font-size: large;
   }
+
+.edit-wrapper {
+  margin-left: -247px;
+  margin-right: 235px;
+}
+
+
+  .editdropdown {
+    display: flex; /* Added property */
+    justify-content: flex-start;
+    align-items: center; /* Added property */
+    margin-right: 10px;
+    padding: 1px;
+    border: none;
+    outline: none;
+    font-size: larger;
+    font-weight: bold;
+    margin-left: -100px;
+  }
   
+
   .bin-submit {
     padding: 8px 12px;
     font-size: 1rem;
@@ -93,16 +116,26 @@
     flex: 1;
     padding: 30px;
     background-color: #fff;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); */
   }
   
   #bintitle {
-    font-size: 1.5rem;
+    font-size: 3rem;
     margin: 0;
     padding: 0;
     float: left;
+    color: black;
+  }
+
+  #binbody {
+    font-size: 1.5rem;
+    float: left;
+    color: grey;
   }
   
+  .bin-body-container {
+    font-size: 3rem;
+  }
   
   .bin-submit:hover {
     background-color: #db3b4e;

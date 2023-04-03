@@ -12,7 +12,7 @@ export const receiveUser = user => ({
 
 export const removeUser = userId => ({
     type: REMOVE_USER,
-    userId // userId: userId
+    userId
 });
 
 // THUNK ACTION CREATORS
@@ -44,28 +44,36 @@ export const createUser = user => async dispatch => {
     dispatch(receiveUser(data.user));
 }
 
-// REDUCER
-const usersReducer = (state = {}, action) => {
-    const nextState = { ...state };
+export const fetchUsers = () => async dispatch => {
+    const res = await csrfFetch('/api/users');
+    const data = await res.json();
+    dispatch(receiveUsers(data.users));
+};
 
+export const receiveUsers = users => ({
+    type: RECEIVE_USER,
+    payload: users
+});
+
+// Selector
+export const getUser = userId => state => {
+    return state?.users ? state.users.find(user => user.id === userId) : null;
+}
+
+export const getUsers = state => {
+    return state?.users ? state.users : [];
+} 
+
+// REDUCER
+const usersReducer = (state = [], action) => {
     switch (action.type) {
         case RECEIVE_USER:
-            nextState[action.payload.id] = action.payload;
-            return nextState;
+            return action.payload;
         case REMOVE_USER:
-            delete nextState[action.userId];
-            return nextState;
+            return state.filter(user => user.id !== action.userId);
         default:
             return state;
     }
 };
 
 export default usersReducer;
-/*
-export const postTea = (tea) => {
-    return csrfFetch('api/teas', {
-        method: 'POST',
-        body: JSON.stringify(tea),
-        // remove any set headers as the csrfFetch will add them
-    })
-*/

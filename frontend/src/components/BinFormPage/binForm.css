@@ -2,48 +2,56 @@
   background-image: url("../../images/marble.jpeg");
   background-color: #f5f5f5;
   background-size: cover;
-  min-height: 100vh;
+  min-height: 120vh;
 }
 
-.form-container {
+#form-container {
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 650px;
+  min-height: 650px;
   padding: 20px;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-container label {
+#form-container label {
   display: block;
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.form-container input[type="text"], select {
-  border: 1px solid #ccc;
+#form-container input[type="text"] {
+  border: 1px solid transparent;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 20px;
-  width: 100%;
+  width: 95%;
+  font-size: 30px;
 }
 
-.form-container input[type="file"] {
-  appearance: none;
-  background-color: #f5f5f5;
-  border: none;
+#form-container select {
+  border: 1px solid transparent;
   border-radius: 5px;
-  color: #333;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 27%;
+  font-size: 20px;
+  margin-left: 260px;
+}
+
+#form-container input[type="file"] {
   cursor: pointer;
   font-size: 16px;
   margin-bottom: 20px;
   padding: 10px;
-  width: 100%;
+  width: 39%;
 }
 
-.form-container button {
+#form-container button {
   background-color: #e60023;
+  align-items: end;
   border: none;
   border-radius: 30px;
   color: #fff;
@@ -56,6 +64,24 @@
   transition: background-color 0.2s ease-in-out;
 }
 
-.form-container button:hover {
+#form-container button:hover {
   background-color: #d5001a;
+}
+
+#preview {
+  max-width: 50%;
+  justify-content: center;
+  display: flex;
+}
+
+.bin-select-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.bin-select {
+  margin-right: 20px;
+  width: 65%;
 }

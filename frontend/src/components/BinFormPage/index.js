@@ -31,7 +31,7 @@ function BinCreatePage ({ setNewBin }) {
     setBody(e.currentTarget.value);
   }
 
-  const options = boards ? boards.map(board => <option key={board.id} value={board.id}>{board.title}</option>) : []
+  const options = boards ? boards.map(board => <option id="option" key={board.id} value={board.id}>{board.title}</option>) : []
 
 
   const handleFile = ({ currentTarget }) => {
@@ -75,8 +75,8 @@ function BinCreatePage ({ setNewBin }) {
 
   }
 
-  // let preview = null;
-  // if (photoUrl) preview = <img src={photoUrl} alt="" />;
+  let preview = null;
+  if (photoUrl) preview = <img id = "preview" src={photoUrl} alt="" />;
 
   return (
     <div id="binback">
@@ -87,27 +87,30 @@ function BinCreatePage ({ setNewBin }) {
 
       <br></br>
 
-    <div className="form-container">
+    <div id="form-container">
     <form onSubmit={handleSubmit}>
-      <label htmlFor="bin-title">Add your title</label>
+      <label htmlFor="bin-title"></label>
       <input type="text"
         id="bin-title"
         value={title}
+        placeholder="Add your title"
         onChange={handleInput}
         required />
-     <label htmlFor="bin-body">Tell everyone what your Bin is about </label>
+     <label htmlFor="bin-body"></label>
         <input type="text"
         id="bin-body"
         value={body}
+        placeholder="Tell everyone what your Bin is about!"
         onChange={handleInput2}
         required />
-    <select className="bin-select" value={boardId} onChange={(e) => setBoardId(e.target.value)}>
+
+      <input type="file" ref={fileRef} onChange={handleFile} />
+      {preview}
+      <br></br>
+      <select className="bin-select" value={boardId} onChange={(e) => setBoardId(e.target.value)}>
                 <option disabled value="">select a board</option>
                 {options}
     </select>
-      <input type="file" ref={fileRef} onChange={handleFile} />
-      {/* <h3>Image preview</h3>
-      {preview} */}
       <button>Make a new bin!</button>
     </form>
     </div>

@@ -1,39 +1,37 @@
 #homes {
-    background-color: white;
-    background-size: 110% 100%;
-    min-height: 120vh;
-  }
-  
-  #homes ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  #homes li {
-    flex: 0 0 calc(20% - 60px);
-    margin: 15px;
-    border-radius: 20px;
-    height: 100%;
-  }
-  
-  #homes li:hover {
-    filter: brightness(60%);
-  }
-  
-  
-  #homes img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 0;
-    border-radius: 16px;
-  }
+  background-color: white;
+  background-size: 110% 100%;
+  min-height: 120vh;
+}
 
-  #binstitle {
-    font-family: sans-serif;
-    font-weight: 600;
-  }
-  
+#homes ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#homes li {
+  flex: 0 0 calc(20% - 30px);
+  margin: 10px;
+  border-radius: 20px;
+  height: 100%;
+}
+
+#homes li:hover {
+  filter: brightness(60%);
+}
+
+
+#homes img {
+  width: 100%;
+  min-height: 270px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  border-radius: 16px;
+}
+
+#binstitle {
+  font-family: sans-serif;
+  font-weight: 600;
+}
