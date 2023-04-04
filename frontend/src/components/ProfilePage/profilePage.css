@@ -1,13 +1,8 @@
 #profileback {
     /* width: 100%; */
-    background-image: url("../../images/marble2.jpeg");
+    background-color: white;
     background-size: 100% 120%;
-    /* background-color: red; */
-    /* background-blend-mode: multiply; */
-    /* background-repeat: no-repeat; */
-    background-repeat: no-repeat;
-    /* padding-bottom: 500px; */
-    background-repeat: repeat;
+
 }
 
 #plus {
