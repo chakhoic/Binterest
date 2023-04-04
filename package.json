@@ -2,7 +2,6 @@
   "name": "binterest",
   "version": "1.0.0",
   "description": "Pinterest clone.",
-  "main": "index.js",
   "directories": {
     "lib": "lib"
   },
