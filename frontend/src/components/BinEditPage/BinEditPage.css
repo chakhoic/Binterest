@@ -2,21 +2,27 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
-    height: 120vh;
-    margin-top: 40px;
+    background-image: url("../../images/marble.jpeg");
+    background-size: cover;
+    min-height: 120vh;
+    background-attachment: fixed;
   }
   
   #edit-form {
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    padding: 40px;
+    padding: 35px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 800px;
+    min-height: 400px;
+    font-family: sans-serif;
+    font-weight: bold;
+
   }
   
   #form-label {
@@ -28,7 +34,7 @@
   }
   
   .form-input {
-    width: 100%;
+    width: 97%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid lightgray;    
@@ -38,7 +44,7 @@
   }
   
   #description {
-    width: 100%;
+    width: 97%;
     height: 50px;
     padding: 10px;
     border-radius: 5px;
@@ -57,7 +63,7 @@
     font-size: 18px;
     cursor: pointer;
     margin-left: 15px;
-    margin-right: -20px;
+    margin-right: -23px;
   }
   
   .cancel-button {
@@ -68,7 +74,6 @@
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
-    margin-left: 500px;
   }
   
   .delete-button {
@@ -79,7 +84,7 @@
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
-    margin-right: 10px;
+    margin-left: -28px;
   }
   
   .button-row {
@@ -92,6 +97,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 93%;
   }
   

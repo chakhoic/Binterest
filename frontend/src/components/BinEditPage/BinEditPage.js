@@ -35,10 +35,13 @@ const BinEditPage = () => {
   return (
     <div className="edit-container">
       <form id="edit-form" onSubmit={handleSubmit}>
-        <h2 id="edityour">Edit Your Bin ✎</h2>
+        <h1 id="edityour">Edit Your Bin ✎</h1>
         <hr></hr>
         <label id="form-label">
           Title
+          <br></br>
+          <br></br>
+
           <input
             type="text"
             name="title"
@@ -49,6 +52,8 @@ const BinEditPage = () => {
         </label>
         <label id="form-label">
           Body
+          <br></br>
+          <br></br>        
           <textarea
             name="description"
             id="description"

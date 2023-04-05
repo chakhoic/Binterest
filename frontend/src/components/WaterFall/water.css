@@ -1,13 +1,15 @@
-#homes {
+/* #homes {
   background-color: white;
   background-size: 110% 100%;
   min-height: 120vh;
-}
+} */
 
 #homes ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 20px;
+
 }
 
 #homes li {
@@ -27,8 +29,9 @@
   min-height: 270px;
   margin-top: 10px;
   margin-bottom: 10px;
-  padding: 0;
   border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 
 #binstitle {

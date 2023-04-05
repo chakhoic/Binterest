@@ -1,14 +1,14 @@
 #binback {
   background-image: url("../../images/marble.jpeg");
-  background-color: #f5f5f5;
   background-size: cover;
   min-height: 120vh;
+  background-attachment: fixed;
 }
 
 #form-container {
   margin: 0 auto;
   max-width: 650px;
-  min-height: 650px;
+  min-height: 500px;
   padding: 20px;
   background-color: white;
   border-radius: 10px;

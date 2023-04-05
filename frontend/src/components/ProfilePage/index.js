@@ -4,11 +4,12 @@ import { Redirect } from 'react-router-dom';
 import plus from "../../images/plus.png"
 import { useSelector, useDispatch } from 'react-redux';
 import * as boardActions from '../../store/boardsReducer'
-import share from "../../images/shareedit.png";
 import BoardItem from './boardItem';
 import alvin from "../../images/alvin.png";
 import { fetchBins, getBins } from '../../store/binsReducer';
 import { Link } from 'react-router-dom';
+import Video from "../Video/Video2";
+
 
 
 const ProfilePage = (props) => {
@@ -47,7 +48,9 @@ const ProfilePage = (props) => {
 
     if (!sessionUser) return <Redirect to="/login" />
     return (
-        <div id="profileback">
+        <div style={{position: 'relative'}} >
+            <Video style={{position: 'absolute'}} />
+
             <br></br>
             <div id="profilediv">
             <img id="alvin" src={alvin} alt="alvin" width="130" height="130" />
@@ -59,9 +62,7 @@ const ProfilePage = (props) => {
             <br></br>
             <h2>15 followers · 0 following</h2>
             <br></br>
-            <ul id="share">
-            <img id="shares" src={share} alt="share" width="260" height="90" />
-            </ul>
+            <br></br>
             <hr></hr>
             <div id="modal">
             <button id ="plus" onClick={handleOpenModal}><img id="plus" src={plus} alt="plus" /></button>
@@ -85,17 +86,11 @@ const ProfilePage = (props) => {
                 </div>
             )}
             </div>
-            
             <h2>Created Boards</h2>
-            <br></br>
-            <br></br>
             <div id="boarddiv">
-            <br></br>
             {boardsIndex}
-            <br></br>
             </div>
-            <br></br>
-            <br></br>
+
             <hr></hr>
             <div id="binsdiv">
                 <br></br>

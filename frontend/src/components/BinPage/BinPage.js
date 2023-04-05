@@ -84,7 +84,7 @@ const BinPage = () => {
 
               <hr></hr>
               <br></br>
-              <div className="bin-body-container" style={{clear: 'both'}}>
+              <div className="bin-body-container">
               <h2 id="binbody">{bin ? bin.body : ""}</h2>
               </div>
               <br></br>

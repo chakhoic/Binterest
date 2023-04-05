@@ -30,18 +30,30 @@ const BoardItem = (props) => {
     const handleClick = e => {
         e.preventDefault()
         history.push(`/boards/${props.board.id}`)
+
     }
+
+    const handleClick2 = () => {
+        history.push(`/profile`);
+    };
 
     const handleDelete = e => {
         e.preventDefault()
         dispatch(deleteBoard(props.board.id))
     }
     return (
-        <div id="board2" onClick={handleClick}>
-            <div id="images"></div>
-            <div id="title2">{props.board.title}
+        <div id="board2" >
+            <div id="containers" onClick={handleClick}>
+            <div id="cell1"></div>
+            <div id="cell2"></div>
+            <div id="cell3"></div>
+            <div id="cell4"></div>
+            </div>
+            <br></br>
+            <div id="boardfunc">
+                <div id="title2">{props.board.title}</div>
                 <div id="ex" onClick={handleDelete}>✖</div>
-                <div id="edits" onClick={handleOpenModal}>✎</div>
+                <div id="ed" onClick={handleOpenModal}>✎</div>
             </div>
             <div id="modal">
                 {showModal && (
@@ -59,6 +71,7 @@ const BoardItem = (props) => {
                                 <br></br>
                                 <br></br>
                                 <button id="buttons" type="submit" >Update Board</button>
+                                <button id="buttons" onClick={handleClick2}>Cancel</button>
                             </form>
                         </div>
                     </div>

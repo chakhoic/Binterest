@@ -374,7 +374,7 @@
     board_id: 4,
     body: 'circles',
   )
-  pic_b32 = URI.open("https://binz1-seeds.s3.amazonaws.com/flower.png")
+  pic_b32 = URI.open("https://binz1-seeds.s3.amazonaws.com/flowerr.webp")
   b32.photo.attach(io: pic_b32, filename:"b32")
   b32.save!
 

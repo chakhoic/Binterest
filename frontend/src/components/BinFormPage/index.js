@@ -82,25 +82,23 @@ function BinCreatePage ({ setNewBin }) {
     <div id="binback">
       <br></br>
       <br></br>
-
       <br></br>
-
       <br></br>
-
     <div id="form-container">
     <form onSubmit={handleSubmit}>
+    <br></br>
       <label htmlFor="bin-title"></label>
       <input type="text"
         id="bin-title"
         value={title}
-        placeholder="Add your title"
+        placeholder="Add your title:"
         onChange={handleInput}
         required />
      <label htmlFor="bin-body"></label>
         <input type="text"
         id="bin-body"
         value={body}
-        placeholder="Tell everyone what your Bin is about!"
+        placeholder="Tell everyone what your Bin is about:"
         onChange={handleInput2}
         required />
 
