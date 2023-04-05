@@ -95,7 +95,7 @@ const ProfilePage = (props) => {
                 </div>
             )}
             </div>
-            <h2>Created Boards</h2>
+            <h1>Created Boards</h1>
             <div id="boarddiv">
             {boardsIndex}
             </div>
@@ -104,7 +104,7 @@ const ProfilePage = (props) => {
             <div id="binsdiv">
                 <br></br>
                 <br></br>
-            <h2>Created Bins</h2>
+            <h1>Created Bins</h1>
             <div id="createdbins">
             <ul>
         {myBinsArray

@@ -8,8 +8,8 @@
 }
 
 #plus {
-    width: 90px;
-    height: 50px;
+    width: 110px;
+    height: 60px;
             margin-left: -20px;
                 background-color: transparent;
                 padding-bottom: 8px;
@@ -37,7 +37,7 @@
     color: gray;
     justify-content: center;
     font-family: sans-serif;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 #alvin {
@@ -58,7 +58,7 @@
 
 #name {
     font-family: sans-serif;
-    font-size: 15px;
+    font-size: 20px;
     color: #888888;
 }
 
