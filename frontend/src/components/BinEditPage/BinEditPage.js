@@ -64,7 +64,7 @@ const BinEditPage = () => {
 
         <div className="button-container">
           <button className="delete-button" onClick={handleClick}>
-            Delete
+            Delete This Bin
           </button>
           <div>
             <button className="cancel-button" onClick={handleClick2}>

@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
 import React, { useState, useEffect } from 'react';
-import { fetchBins } from "../../store/binsReducer";
+import { fetchBins, deleteBin } from "../../store/binsReducer";
 import { fetchBoards } from "../../store/boardsReducer";
 import { useHistory } from "react-router-dom";
 import "./BinPage.css"
-import { createSave, saveBin } from "../../store/savedBinsReducer";
+import { createSave } from "../../store/savedBinsReducer";
 
 const BinPage = () => {
     const dispatch = useDispatch();
@@ -23,7 +23,6 @@ const BinPage = () => {
     const id = useParams()
   
     const bin = bins[parseInt(id.binid)]
-  
  
 
     const handleSubmit = (e) => {
@@ -37,7 +36,6 @@ const BinPage = () => {
         history.push(`/boards/${selectedBoard}`); // Navigate to the board page
       }
     }  
-    
   
     return (
       <div className="bin-page">
@@ -54,7 +52,7 @@ const BinPage = () => {
                       history.push(`/bins/${id.binid}/edit`);
                     }
                   }}>
-                    <option value="placeholder">. . .</option>
+                    <option value="placeholder">• • •</option>
                     <option value="edit">Edit</option>
                   </select>
                   </div>

@@ -55,6 +55,19 @@ class Api::BinsController < ApplicationController
     @bin = Bin.find(params[:id])
   end
 
+  def remove_bin_from_board
+    board_id = params[:board_id]
+    bin_id = params[:id]
+  
+    save = Save.find_by(board_id: board_id, bin_id: bin_id)
+  
+    if save&.destroy
+      render json: { message: "Successfully removed bin from board." }
+    else
+      render json: { error: "Error removing bin from board." }, status: 422
+    end
+  end
+  
   private
 
   def bins_params

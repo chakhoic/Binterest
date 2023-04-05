@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
-import { fetchBins } from '../../store/binsReducer';
+import { fetchBins, removeBinFromBoard } from '../../store/binsReducer';
 import { fetchBoards } from "../../store/boardsReducer";
 import Video from "../Video/Video2";
 import "./BoardPage.css"
@@ -13,13 +13,20 @@ const BoardPage = () => {
   const boards = useSelector(state => Object.values(state.boards))
 
   const { boardid } = useParams();
+  const [dropdownValue, setDropdownValue] = useState('placeholder');
 
   useEffect(() => {
-    dispatch(fetchBins());
+    dispatch(fetchBins(parseInt(boardid)));
     dispatch(fetchBoards());
   }, []);
   
-
+  const handleRemove = (binId, option) => {
+    if (option === 'remove') {
+      dispatch(removeBinFromBoard(binId, parseInt(boardid)));
+      setDropdownValue('placeholder');
+    }
+  };
+  
   const board = boards.find(board => board.id.toString() === boardid);
 
   return (
@@ -35,7 +42,6 @@ const BoardPage = () => {
       <div id="boardpage">
         <ul>
           {bins
-            .filter(bin => parseInt(bin.boardId) === parseInt(boardid))
             .sort(() => Math.random() - 0.5)
             .map(bin => (
               <li key={bin.id}>
@@ -43,9 +49,25 @@ const BoardPage = () => {
                   <img id="pics" src={bin.photoUrl} alt="" />
                 </Link>
                 <div id="binstitle">{bin.title}</div>
+                <br/>
+                <select
+                  key={bin.id}
+                  className="removedropdown"
+                  value={dropdownValue}
+                  onChange={(e) => {
+                    setDropdownValue(e.target.value);
+                    handleRemove(bin.id, e.target.value);
+                  }}
+                >
+                  <option value="placeholder">Remove From Board</option>
+                  <option value="remove">Confirm (only for new saved bins)</option>
+                </select>
+                
               </li>
             ))}
         </ul>
+        <br />
+        <br/>
       </div>
     </div>
   );

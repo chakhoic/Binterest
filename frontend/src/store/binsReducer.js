@@ -6,9 +6,6 @@ export const REMOVE_BIN = 'bins/REMOVE_BIN';
 export const RECEIVE_BINS = 'bins/RECEIVE_BINS';
 export const UPDATE_BIN = 'UPDATE_BIN'
 
-// export const ADD_BIN = 'bins/ADD_BIN'
-
-
 
 // ACTION CREATORS
 export const receiveBin = bin => ({
@@ -33,11 +30,8 @@ export const updateImage = binObj => {
     }
 }
 
-
-
 // THUNK ACTIONS
 export const fetchBins = (boardId = null) => async (dispatch) => {
-
     const res = await csrfFetch('/api/bins');
 
     if (res.ok) {
@@ -45,7 +39,7 @@ export const fetchBins = (boardId = null) => async (dispatch) => {
         let filteredBins;
         if (boardId) { 
              filteredBins = Object.keys(bins).reduce((filtered, key) => {
-                if (bins[key].savedBoards.some(el => el.id === boardId)) {
+                if (bins[key].boardId === boardId || bins[key].savedBoards.some(el => el.id === boardId)) {
                     filtered[key] = bins[key]
                 }
                 return filtered
@@ -57,16 +51,6 @@ export const fetchBins = (boardId = null) => async (dispatch) => {
         dispatch(receiveBins(filteredBins));
     }
 }
-export const fetchBins2 = (boardId) => async (dispatch) => {
-    const url = boardId ? `/api/bins?boardId=${boardId}` : '/api/bins';
-    const res = await csrfFetch(url);
-  
-    if (res.ok) {
-      const bins = await res.json();
-      dispatch(receiveBins(bins));
-    }
-  };
-
 
 export const fetchBin = (binId) => async (dispatch) => {
     const res = await csrfFetch(`/api/bins/${binId}`);
@@ -106,21 +90,23 @@ export const deleteBin = binId => async dispatch => {
         dispatch(removeBin(binId));
     }
 }
+  
 
-// export const updateBin = bin => async (dispatch) => {
-//     const res = await csrfFetch(`/api/bins/${bin.id}`, {
-//         method: 'PATCH',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(bin)
-//     });
+export const removeBinFromBoard = (binId, boardId) => async (dispatch) => {
+    
+    const res = await csrfFetch(`/api/bins/${binId}/remove_bin_from_board`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ board_id: boardId })
+    });
+  
+    if (res.ok) {
+      dispatch(fetchBins(boardId));
+    }
+};
 
-//     if (res.ok) {
-//         const bin = await res.json();
-//         dispatch(receiveBin(bin));
-//     }
-// }
 
 export const updateBin = (binObj) => async (dispatch) => {
     const res = await csrfFetch(`/api/bins/${binObj.id}`, {

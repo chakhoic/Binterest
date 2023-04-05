@@ -1,7 +1,11 @@
 class Api::SavesController < ApplicationController
     before_action :require_logged_in, only: [:create, :destroy]
   
-
+    def index
+      @saved_bins = Save.all
+      render :index
+    end
+    
   
     def create
       existing_save = Save.find_by(bin_id: params[:bin_id], board_id: params[:board_id])

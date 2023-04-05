@@ -46,6 +46,10 @@ function Navigation() {
         setSearchTerm(e.target.value);
     };
 
+    const handleClick = () => {
+        setSearchTerm('');
+    };
+
 
     if (!sessionUser) {
     return (
@@ -67,33 +71,32 @@ function Navigation() {
                     <NavLink exact to="/feed"><img id="home" src={home} alt="home" /></NavLink>
                 </div>
                 {buttoncreate}
-                 <div id="search-container">
-                    <label>
-                        <input
-                        id="search"
-                        type="search"
-                        placeholder="🔍  Search"
-                        name="search"
-                        value={searchTerm}
-                        onChange={handleSearch}
-                        />
-                    </label>
-                    {searchTerm !== '' && (
-                        <div className="dropdown">
-                        <div className="bin-list">
-                            {binList.map(bin => (
-                            <div key={bin.id} className="bin-card">
-                                <br></br>
-                                <br></br>
-
-                                <NavLink to={`/bins/${bin.id}`}>
-                                <h2 id="bincardtitle">🔍 {bin.title}</h2>
-                                </NavLink>
+                <div id="search-container">
+                        <label>
+                            <input
+                                id="search"
+                                type="search"
+                                placeholder="🔍  Search"
+                                name="search"
+                                value={searchTerm}
+                                onChange={handleSearch}
+                            />
+                        </label>
+                        {searchTerm !== '' && (
+                            <div className="dropdown">
+                                <div className="bin-list">
+                                    {binList.map(bin => (
+                                        <div key={bin.id} className="bin-card">
+                                            <br></br>
+                                            <br></br>
+                                            <NavLink to={`/bins/${bin.id}`} onClick={handleClick}>
+                                                <h2 id="bincardtitle">🔍 {bin.title}</h2>
+                                            </NavLink>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                            ))}
-                        </div>
-                        </div>
-                    )}
+                        )}
                     </div>
 
                 <div>
