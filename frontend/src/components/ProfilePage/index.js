@@ -113,8 +113,6 @@ const ProfilePage = (props) => {
           })}
       </ul>
 </div>
-
-            <h1 id ="place">hi</h1>
             <h1 id="place">hi</h1>
             </div>
         </div>

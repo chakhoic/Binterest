@@ -57,29 +57,15 @@ export const fetchBins = (boardId = null) => async (dispatch) => {
         dispatch(receiveBins(filteredBins));
     }
 }
-// export const fetchBins = (boardId = null) => async (dispatch) => {
-//     const res = await csrfFetch('/api/bins');
+export const fetchBins2 = (boardId) => async (dispatch) => {
+    const url = boardId ? `/api/bins?boardId=${boardId}` : '/api/bins';
+    const res = await csrfFetch(url);
   
-//     if (res.ok) {
-//       const bins = await res.json();
-//       let filteredBins;
-//       if (boardId) {
-//         const boardIdInt = parseInt(boardId); // Convert boardId to an integer
-//         filteredBins = Object.keys(bins).reduce((filtered, key) => {
-//           if (bins[key].savedBoards.some(el => el.boardId === boardIdInt)) {
-//             // Compare el.boardId instead of el.id
-//             filtered[key] = bins[key];
-//           }
-//           return filtered;
-//         }, {});
-//       } else {
-//         filteredBins = bins;
-//       }
-  
-//       dispatch(receiveBins(filteredBins));
-//     }
-//   };
-  
+    if (res.ok) {
+      const bins = await res.json();
+      dispatch(receiveBins(bins));
+    }
+  };
 
 
 export const fetchBin = (binId) => async (dispatch) => {

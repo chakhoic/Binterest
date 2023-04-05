@@ -3,7 +3,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   position: relative;
   width: 100%;
   background-image: url("../../images/marble.jpeg");
@@ -51,7 +50,8 @@
 /* Style for the image */
 .bin-image {
   width: 100%;
-  height: auto;
+  max-height: 105vh;
+  object-fit: cover;
   display: block;
   margin-top: 0;
   margin-left: 0;
@@ -113,7 +113,7 @@
 
 
 #bintitle {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin: 0;
   padding: 0;
   float: left;
@@ -121,7 +121,7 @@
 }
 
 #binbody {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   float: left;
   color: grey;
 }

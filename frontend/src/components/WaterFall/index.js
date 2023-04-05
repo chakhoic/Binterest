@@ -38,7 +38,9 @@ const Feed = () => {
               );
             })}
         </ul>
+        <br></br>
       </div>
+      <br></br>
     </div>
   );
 }  

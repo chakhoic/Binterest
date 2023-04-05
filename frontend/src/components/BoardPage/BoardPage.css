@@ -3,14 +3,9 @@
   display: flex;
   font-family: sans-serif;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 30px;
 }
 
-#boardpage {
-    background-color: white;
-    background-size: 110% 100%;
-    min-height: 120vh;
-  }
   
   #boardpage ul {
     display: flex;

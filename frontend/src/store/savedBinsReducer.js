@@ -1,4 +1,5 @@
 import csrfFetch from "./csrf"
+
   export const createSave = (save) => async dispatch => {
     const response = await csrfFetch('/api/saves', {
       method: "POST",
@@ -8,10 +9,6 @@ import csrfFetch from "./csrf"
       body: JSON.stringify(save)
     })
     return response
-    // csrfAPIFetch('/api/saves', {
-    //   method: "POST",
-    //   data: { save }
-    // })
   }
   
 

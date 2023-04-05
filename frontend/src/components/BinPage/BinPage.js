@@ -36,8 +36,7 @@ const BinPage = () => {
       if (selectedBoard) {
         history.push(`/boards/${selectedBoard}`); // Navigate to the board page
       }
-    }
-  
+    }  
     
   
     return (

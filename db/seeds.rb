@@ -358,15 +358,15 @@
   b30.photo.attach(io: pic_b30, filename:"b30")
   b30.save!
 
-  # b31 = Bin.create!(
-  #   title: 'fish tank',
-  #   author_id: 3,
-  #   board_id: 4,
-  #   body: 'tropical',
-  # )
-  # pic_b31 = URI.open("https://binz1-seeds.s3.amazonaws.com/fish2.jpeg")
-  # b31.photo.attach(io: pic_b31, filename:"b31")
-  # b31.save!
+  b31 = Bin.create!(
+    title: 'fish tank',
+    author_id: 3,
+    board_id: 4,
+    body: 'tropical',
+  )
+  pic_b31 = URI.open("https://binz1-seeds.s3.amazonaws.com/fish2.jpeg")
+  b31.photo.attach(io: pic_b31, filename:"b31")
+  b31.save!
 
   b32 = Bin.create!(
     title: 'flower',
@@ -388,15 +388,15 @@
   b33.photo.attach(io: pic_b33, filename:"b33")
   b33.save!
 
-  # b34 = Bin.create!(
-  #   title: 'shark tank',
-  #   author_id: 3,
-  #   board_id: 4,
-  #   body: 'be careful',
-  # )
-  # pic_b34 = URI.open("https://binz1-seeds.s3.amazonaws.com/fish.jpeg")
-  # b34.photo.attach(io: pic_b34, filename:"b34")
-  # b34.save!
+  b34 = Bin.create!(
+    title: 'shark tank',
+    author_id: 3,
+    board_id: 4,
+    body: 'be careful',
+  )
+  pic_b34 = URI.open("https://binz1-seeds.s3.amazonaws.com/fish.jpeg")
+  b34.photo.attach(io: pic_b34, filename:"b34")
+  b34.save!
 
   b35 = Bin.create!(
     title: 'manga panel',
@@ -417,6 +417,17 @@
   pic_b36 = URI.open("https://binz1-seeds.s3.amazonaws.com/moon.jpeg")
   b36.photo.attach(io: pic_b36, filename:"b36")
   b36.save!
+
+  b37 = Bin.create!(
+    title: 'dog',
+    author_id: 3,
+    board_id: 4,
+    body: 'its stuck',
+  )
+  pic_b37 = URI.open("https://binz1-seeds.s3.amazonaws.com/dogzz.jpeg")
+  b37.photo.attach(io: pic_b37, filename:"b37")
+  b37.save!
+
 
 
 
