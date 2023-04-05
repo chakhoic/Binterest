@@ -9,11 +9,13 @@ import alvin from "../../images/alvin.png";
 import { fetchBins, getBins } from '../../store/binsReducer';
 import { Link } from 'react-router-dom';
 import Video from "../Video/Video2";
+import { useHistory } from "react-router-dom"
 
 
 
 const ProfilePage = (props) => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const sessionUser = useSelector((state) => state.session.user)
     const [showModal, setShowModal] = useState(false);
     const handleOpenModal = () => setShowModal(true);
@@ -44,6 +46,11 @@ const ProfilePage = (props) => {
     
     const myBins = bins.filter(bin => bin.authorId === sessionUser.id)
     const myBinsArray = Object.values(myBins);
+
+    const handleClick2 = () => {
+        history.push(`/profile`);
+    };
+
 
 
     if (!sessionUser) return <Redirect to="/login" />
@@ -81,6 +88,8 @@ const ProfilePage = (props) => {
                                 <br></br>
                                 <br></br>
                             <button id="buttons" type="submit" >Create Board</button>
+                            <button id="buttons" onClick={handleClick2}>Cancel</button>
+
                         </form>
                     </div>
                 </div>

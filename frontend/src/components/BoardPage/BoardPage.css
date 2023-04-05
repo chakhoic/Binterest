@@ -42,9 +42,6 @@
   }
   
   .removedropdown {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
     border: none;
     outline: none;
     font-size: 15px;

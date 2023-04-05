@@ -1,7 +1,7 @@
 #containers {
   display: grid;
   border-radius: 15px;
-  height: 180px;
+  height: 190px;
   width: 310px;
   /* border: 1px solid rgba(211, 211, 211, 0.317); */
   cursor: pointer;
