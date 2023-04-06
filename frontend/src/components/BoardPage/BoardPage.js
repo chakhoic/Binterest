@@ -60,7 +60,7 @@ const BoardPage = () => {
                   }}
                 >
                   <option value="placeholder">Remove From Board</option>
-                  <option value="remove">Confirm (only for new saved bins)</option>
+                  <option value="remove">Confirm ( for new saves only )   </option>
                 </select>
                 
               </li>
