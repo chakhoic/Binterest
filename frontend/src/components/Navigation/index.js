@@ -56,7 +56,7 @@ function Navigation() {
         <>
         <div id="bar">
             <NavLink exact to="/"><img id="home" src={home} alt="home" /></NavLink>
-            <a href="https://github.com/chakhoic/Binterest"><img id="eagle" src={eagle} alt="eagle" /></a>
+            <a href="https://chakhoic.github.io/Portfoolio/"><img id="eagle" src={eagle} alt="eagle" /></a>
             {buttonsignup}
             {buttonlogin}
 
