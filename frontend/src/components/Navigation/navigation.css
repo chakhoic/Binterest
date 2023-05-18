@@ -11,14 +11,12 @@
 #bar2 {
     background-color: white;
     margin-left: -5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    position: relative; 
-    vertical-align: middle;
-
+    
 }
 
   
@@ -28,16 +26,15 @@
     margin-top: -10px;
     margin-left: -5px;
     margin-bottom: -5px;
-    padding: 12px;
+    padding: 15px;
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
 }
 
 #login {
     margin-bottom: 10px;
     float: right;
-    margin-right: 10px;
     min-width: 60px;
     box-sizing: border-box;
     background-color: rgba(255, 0, 0, 0.805);
@@ -87,8 +84,6 @@
 }
 
 #signup {
-    float: right;
-margin-right: -265px;
     min-width: 60px;
         box-sizing: border-box;
         display: inline-block;
@@ -105,6 +100,8 @@ margin-right: -265px;
         cursor: pointer;
         border: none;
         overflow: visible;
+        margin-left: 1315px;
+        margin-right: 10px;
 }
 
 #signup:hover {
@@ -112,11 +109,8 @@ margin-right: -265px;
 }
 
 #profile {
-    margin-left: 15px;
-    margin-right: 5px;
-    margin-top: 3px;
-    height: 35px;
-    width: 35px;
+    height: 32px;
+    width: 32px;
 }
 
 #homelink {
@@ -126,7 +120,7 @@ margin-right: -265px;
 #dropdown {
         background-color: transparent;
         color: black;
-        padding: 12px;
+        padding: 10px;
         border-radius: 25px;
         font-size: 100%;
         font-family: sans-serif;
@@ -149,75 +143,21 @@ margin-right: -265px;
         justify-content: center;
         background-color: #f2f2f2;
         border-color: #f2f2f2;
+        border-width: 3px;
         border-style: hidden;
         padding: 15px;
         border-radius: 100px;
         width: 900px;
         font-family: sans-serif;
         font-size: 15px;
-        position: relative;
 }
 
 #link {
-    margin-left: 5px;
     height: 30px;
     width: 30px;
 }
 
 #git {
-margin-top: 5px;
     height: 30px;
     width: 30px;
 }
-
-#eagle {
-    margin-left: 1000px;
-    margin-right: -260px;
-    height: 32px;
-    width: 32px;
-}
-
-.dropdown {
-    display: inline-block;
-    position: absolute; 
-    top: 100%; 
-}
-
-#search-container {
-    display: flex;
-    align-items: flex-start;
-  }
-  
-  .dropdown .bin-list {
-    position: absolute;
-    margin-top: -17px;
-    left: 0;
-    width: 900px;
-    max-height: 400px;
-    overflow-y: auto;
-    background-color: #fff;
-    border-radius: 6px;
-    z-index: 1;
-  }
-
-.dropdown .bin-list .bin-card {
-    display: block;
-    padding: 10px;
-    font-family: sans-serif;
-    font-size: 5px;
-}
-
-.bin-card a {
-    text-decoration: none;
-  }
-
-#bincardtitle {
-    text-align: left;
-    font-family: sans-serif;
-    font-size: 16px;
-}
-
-.dropdown .bin-list .bin-card:hover {
-    background-color: #f5f5f5;
-}
-
