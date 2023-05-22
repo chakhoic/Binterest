@@ -32,7 +32,7 @@ const BinEditPage = () => {
     history.push(`/bins/${binid}`);
   };
 
-  const isButtonDisabled = !title && !body;
+  const isButtonDisabled = !title || !body;
 
   return (
     <div className="edit-container">
@@ -74,7 +74,7 @@ const BinEditPage = () => {
             <button
               id="submit-button"
               type="submit"
-              className={`done-button ${isButtonDisabled ? "" : "green"}`}
+              className={`done-button ${isButtonDisabled ? "grey" : "green"}`}
               disabled={isButtonDisabled}
             >
               Done
