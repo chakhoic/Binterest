@@ -54,7 +54,7 @@ const BinEditPage = () => {
         <label id="form-label">
           Body
           <br></br>
-          <br></br>        
+          <br></br>
           <textarea
             name="description"
             id="description"
@@ -74,7 +74,7 @@ const BinEditPage = () => {
             <button
               id="submit-button"
               type="submit"
-              className="done-button"
+              className={`done-button ${isButtonDisabled ? "" : "green"}`}
               disabled={isButtonDisabled}
             >
               Done

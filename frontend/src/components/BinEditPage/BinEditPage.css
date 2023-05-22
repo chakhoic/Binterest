@@ -1,111 +1,117 @@
 .edit-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url("../../images/marble.jpeg");
-    background-size: cover;
-    min-height: 120vh;
-    background-attachment: fixed;
-  }
-  
-  #edit-form {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    padding: 35px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 800px;
-    min-height: 400px;
-    font-family: sans-serif;
-    font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../../images/marble.jpeg");
+  background-size: cover;
+  min-height: 120vh;
+  background-attachment: fixed;
+}
 
-  }
-  
-  #form-label {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    width: 100%;
-    font-size: 18px;
-  }
-  
-  .form-input {
-    width: 97%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid lightgray;    
-    margin-top: 5px;
-    margin-bottom: 15px;
-    font-size: 16px;
-  }
-  
-  #description {
-    width: 97%;
-    height: 50px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid lightgray;    
-    margin-top: 5px;
-    margin-bottom: 15px;
-    font-size: 16px;
-  }
-  
-  #submit-button {
-    background-color: #2ecc71;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    margin-left: 15px;
-    margin-right: -23px;
-  }
-  
-  .cancel-button {
-    background-color: #ccc;
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-  }
-  
-  .delete-button {
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    margin-left: -28px;
-  }
-  
-  .button-row {
-    display: flex;
-    width: 100%;
-    margin-top: 20px;
-  }
-  
-  .button-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 93%;
-  }
-  
-  .done-button {
-    background-color: grey;
-    color: white;
-  }
-  
-  .done-button.green {
-    background-color: #2ecc71;
-  }
-  
+#edit-form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 35px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 800px;
+  min-height: 400px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+#form-label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+  font-size: 18px;
+}
+
+.form-input {
+  width: 97%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+#description {
+  width: 97%;
+  height: 50px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+#submit-button {
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 15px;
+  margin-right: -23px;
+}
+
+.cancel-button {
+  background-color: #ccc;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: -28px;
+}
+
+.button-row {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 93%;
+}
+
+.done-button {
+  background-color: grey;
+  color: white;
+  cursor: not-allowed;
+}
+
+.done-button:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+  opacity: 0.5; /* Add opacity to visually indicate the disabled state */
+}
+
+.done-button.green {
+  background-color: #2ecc71;
+  cursor: pointer;
+}
