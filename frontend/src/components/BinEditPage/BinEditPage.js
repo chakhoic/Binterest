@@ -32,6 +32,8 @@ const BinEditPage = () => {
     history.push(`/bins/${binid}`);
   };
 
+  const isButtonDisabled = !title && !body;
+
   return (
     <div className="edit-container">
       <form id="edit-form" onSubmit={handleSubmit}>
@@ -41,7 +43,6 @@ const BinEditPage = () => {
           Title
           <br></br>
           <br></br>
-
           <input
             type="text"
             name="title"
@@ -70,7 +71,12 @@ const BinEditPage = () => {
             <button className="cancel-button" onClick={handleClick2}>
               Cancel
             </button>
-            <button id="submit-button" type="submit" className="done-button">
+            <button
+              id="submit-button"
+              type="submit"
+              className="done-button"
+              disabled={isButtonDisabled}
+            >
               Done
             </button>
           </div>

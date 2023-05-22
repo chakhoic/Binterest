@@ -100,3 +100,12 @@
     width: 93%;
   }
   
+  .done-button {
+    background-color: grey;
+    color: white;
+  }
+  
+  .done-button.green {
+    background-color: #2ecc71;
+  }
+  
