@@ -109,8 +109,8 @@
 }
 
 #profile {
-    height: 32px;
-    width: 32px;
+    height: 35px;
+    width: 35px;
 }
 
 #homelink {
@@ -155,6 +155,7 @@
 #link {
     height: 30px;
     width: 30px;
+    margin-right: 5px;
 }
 
 #git {
